@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Project" >
         <activity
             android:name=".TemplateWorkOuts"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".TemplateActivity"/>
         <activity
             android:name=".TemplateActivity"
             android:exported="false"

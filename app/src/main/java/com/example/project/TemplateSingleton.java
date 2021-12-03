@@ -15,6 +15,7 @@ public class TemplateSingleton {
         templates.add(new TemplateModels("Upper body", "Bench press", "Bent-over row", "Overhead press", "Biceps curl", "Tricep dips", "Deadlift"));
         templates.add(new TemplateModels("Lower body", "Leg press", "jodsiof", "ifjgiofjd", "dijd", "dofijg", "ijdojfd"));
         templates.add(new TemplateModels("Abs", "blaablaa", "oijdfoigf", "jotain", "jotainjotain", "iijsodjf", "jsodijds"));
+
     }
 
     public ArrayList<TemplateModels> getTemplates() {

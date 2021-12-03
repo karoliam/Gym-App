@@ -2,13 +2,13 @@ package com.example.project;
 
 public class TemplateModels {
 
-    private static String name;
-    private static String exercise1;
-    private static String exercise2;
-    private static String exercise3;
-    private static String exercise4;
-    private static String exercise5;
-    private static String exercise6;
+    private  String name;
+    private  String exercise1;
+    private  String exercise2;
+    private  String exercise3;
+    private  String exercise4;
+    private  String exercise5;
+    private  String exercise6;
 
     public TemplateModels(String name, String exercise1, String exercise2, String exercise3, String exercise4, String exercise5, String exercise6) {
         this.name = name;
@@ -29,27 +29,27 @@ public class TemplateModels {
         return name;
     }
 
-    public static String getExercise1() {
+    public String getExercise1() {
         return exercise1;
     }
 
-    public static String getExercise2() {
+    public String getExercise2() {
         return exercise2;
     }
 
-    public static String getExercise3() {
+    public String getExercise3() {
         return exercise3;
     }
 
-    public static String getExercise4() {
+    public String getExercise4() {
         return exercise4;
     }
 
-    public static String getExercise5() {
+    public String getExercise5() {
         return exercise5;
     }
 
-    public static String getExercise6() {
+    public String getExercise6() {
         return exercise6;
     }
 }
