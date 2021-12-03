@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".TemplateActivity">
 
-<<<<<<< HEAD
-=======
     <ListView
         android:id="@+id/workOutTemplates"
         android:layout_width="0dp"
@@ -20,5 +18,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
->>>>>>> d9fd59a76a59a2f72c158c37bee5a7f21ca57a43
 </androidx.constraintlayout.widget.ConstraintLayout>
