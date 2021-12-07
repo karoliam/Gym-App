@@ -3,7 +3,6 @@ package com.example.project;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,9 +24,6 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_workout);
 
-        loadData();
-        buildRecyclerView();
-        setInsertButton();
 
         Button buttonSave = findViewById(R.id.button_save);
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -40,9 +36,17 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         newworkoutbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRecyclerView.setAdapter(null);
+                clearRecyclerView();
+
             }
         });
+        loadData();
+        if(!newworkoutbutton.isPressed()){
+            loadData();
+        }
+        buildRecyclerView();
+        setInsertButton();
+
     }
 
     private void saveData() {
@@ -98,5 +102,9 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     private void insertItem(String line1, String line2, String line3, String line4) {
         mWorkoutList.add(new WorkoutClass(line1, line2, line3, line4));
         mAdapter.notifyItemInserted(mWorkoutList.size());
+    }
+    private void clearRecyclerView(){
+        mWorkoutList.clear();
+        mAdapter.notifyDataSetChanged();
     }
 }
