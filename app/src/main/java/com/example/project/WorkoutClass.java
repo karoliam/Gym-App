@@ -7,9 +7,9 @@ package com.example.project;
  */
 public class WorkoutClass {
     private String workoutName;
-    private int gymWeight;
-    private int reps;
-    private int sets;
+    private String gymWeight;
+    private String reps;
+    private String sets;
 
     /**
      *
@@ -18,7 +18,7 @@ public class WorkoutClass {
      * @param reps int toistojen määrä
      * @param sets int sarjojen määrä
      */
-    public WorkoutClass(String workoutName, int gymWeight, int reps, int sets) {
+    public WorkoutClass(String workoutName, String gymWeight, String reps, String sets) {
         this.workoutName = workoutName;
         this.gymWeight = gymWeight;
         this.reps = reps;
@@ -39,7 +39,7 @@ public class WorkoutClass {
      * @return palauttaa painojen painon
      */
 
-    public int getGymWeight() {
+    public String getGymWeight() {
         return gymWeight;
     }
 
@@ -48,7 +48,7 @@ public class WorkoutClass {
      * @return palauttaa toistojen määrän
      */
 
-    public int getReps() {
+    public String getReps() {
         return reps;
     }
 
@@ -57,7 +57,7 @@ public class WorkoutClass {
      * @return palauttaa sarjojen määrän
      */
 
-    public int getSets() {
+    public String getSets() {
         return sets;
     }
 }

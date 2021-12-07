@@ -1,78 +1,110 @@
 package com.example.project;
 
-import android.app.Activity;
-import android.icu.lang.UCharacter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.InputFilter;
-import android.text.InputType;
-import android.util.TypedValue;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-public class OwnWorkoutActivity extends Activity {
-    private Button buttonView;
-    private LinearLayout parentLayout;
-    private int hint=0;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+public class OwnWorkoutActivity extends AppCompatActivity {
+    ArrayList<WorkoutClass> mWorkoutList;
+    private RecyclerView mRecyclerView;
+    private WorkoutAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_workout);
-        buttonView=(Button)findViewById(R.id.buttonView);
-        parentLayout = (LinearLayout)findViewById(R.id.parentLayout);
-        buttonView.setOnClickListener(new View.OnClickListener() {
+
+
+        Button buttonSave = findViewById(R.id.button_save);
+        buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createEditTextView();
+                saveData();
+            }
+        });
+        Button newworkoutbutton = findViewById(R.id.button_new);
+        newworkoutbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearRecyclerView();
+
+            }
+        });
+        loadData();
+        if(!newworkoutbutton.isPressed()){
+            loadData();
+        }
+        buildRecyclerView();
+        setInsertButton();
+
+    }
+
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(mWorkoutList);
+        editor.putString("workout list", json);
+        editor.apply();
+    }
+
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("workout list", null);
+        Type type = new TypeToken<ArrayList<WorkoutClass>>() {}.getType();
+        mWorkoutList = gson.fromJson(json, type);
+
+        if (mWorkoutList == null) {
+            mWorkoutList = new ArrayList<>();
+        }
+    }
+
+    private void buildRecyclerView() {
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new WorkoutAdapter(mWorkoutList);
+
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void setInsertButton() {
+        Button buttonInsert = findViewById(R.id.button_insert);
+        buttonInsert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText exercise = findViewById(R.id.setTextExercise);
+                EditText weight = findViewById(R.id.setTextWeight);
+                EditText reps = findViewById(R.id.setTextReps);
+                EditText sets = findViewById(R.id.setTextSets);
+                insertItem(exercise.getText().toString(),weight.getText().toString(),
+                        reps.getText().toString(), sets.getText().toString());
+                exercise.setText("");
+                weight.setText("");
+                reps.setText("");
+                sets.setText("");
             }
         });
     }
-    protected void createEditTextView() {
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams (
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-        params.setMargins(0,10,0,10);
-        EditText exercise = new EditText(this);
-        EditText weight = new EditText(this);
-        EditText sets = new EditText(this);
-        EditText reps = new EditText(this);
-        int maxLength = 5;
-        hint++;
-        exercise.setHint("Your exercise");
-        exercise.setInputType(InputType.TYPE_CLASS_TEXT);
-        exercise.setTextSize(TypedValue.COMPLEX_UNIT_SP,18);
-        exercise.setId(hint);
-        InputFilter[] fArray = new InputFilter[1];
-        fArray[0] = new InputFilter.LengthFilter(maxLength);
-        exercise.setFilters(fArray);
-        parentLayout.addView(exercise);
 
-        weight.setHint("weight");
-        weight.setLayoutParams(params);
-        weight.setInputType(InputType.TYPE_CLASS_NUMBER);
-        weight.setTextSize(TypedValue.COMPLEX_UNIT_SP,18);
-        weight.setId(hint);
-        weight.setFilters(fArray);
-        parentLayout.addView(weight);
-
-        sets.setHint("sets");
-        sets.setLayoutParams(params);
-        sets.setInputType(InputType.TYPE_CLASS_NUMBER);
-        sets.setTextSize(TypedValue.COMPLEX_UNIT_SP,18);
-        sets.setId(hint);
-        sets.setFilters(fArray);
-        parentLayout.addView(sets);
-
-        reps.setHint("reps");
-        reps.setLayoutParams(params);
-        reps.setInputType(InputType.TYPE_CLASS_NUMBER);
-        reps.setTextSize(TypedValue.COMPLEX_UNIT_SP,18);
-        reps.setId(hint);
-        reps.setFilters(fArray);
-        parentLayout.addView(reps);
+    private void insertItem(String line1, String line2, String line3, String line4) {
+        mWorkoutList.add(new WorkoutClass(line1, line2, line3, line4));
+        mAdapter.notifyItemInserted(mWorkoutList.size());
+    }
+    private void clearRecyclerView(){
+        mWorkoutList.clear();
+        mAdapter.notifyDataSetChanged();
     }
 }

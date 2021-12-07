@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+
+        <TextView
+            android:id="@+id/exerciseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/exerciseTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exerciseText"
+            android:text="Exercise"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/weightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exerciseTextview"
+            android:text="Weight"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/weightTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weightText"
+            android:text="Weight"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/repsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weightTextview"
+            android:text="Reps"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/repsTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/repsText"
+            android:text="Reps"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/setsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/repsTextview"
+            android:text="Sets"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/setsTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setsText"
+            android:text="Sets"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
