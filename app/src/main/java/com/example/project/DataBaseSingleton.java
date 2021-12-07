@@ -22,6 +22,7 @@ public class DataBaseSingleton {
 
     private DataBaseSingleton(){
         workoutClassArrayList = new ArrayList<WorkoutClass>();
+
     }
 
     /**
@@ -30,6 +31,7 @@ public class DataBaseSingleton {
      */
 
     public void addWorkout(WorkoutClass workout){
+
         workoutClassArrayList.add(workout);
     }
 

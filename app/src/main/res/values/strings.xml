@@ -3,4 +3,6 @@
     <string name="ownWorkOut">Add your own workout</string>
     <string name="templateWorkOut">Use a template</string>
     <string name="titleWorkOut">Start a new workout</string>
+    <string name="plusButton">+</string>
+    <string name="add_your_exercise">Add your exercise</string>
 </resources>
