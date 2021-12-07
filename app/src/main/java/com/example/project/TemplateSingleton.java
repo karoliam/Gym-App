@@ -12,9 +12,9 @@ public class TemplateSingleton {
 
     private TemplateSingleton() {
         templates = new ArrayList<TemplateModels>();
-        templates.add(new TemplateModels("Upper body", "Bench press", "Bent-over row", "Overhead press", "Biceps curl", "Tricep dips", "Deadlift"));
-        templates.add(new TemplateModels("Lower body", "Leg press", "jodsiof", "ifjgiofjd", "dijd", "dofijg", "ijdojfd"));
-        templates.add(new TemplateModels("Abs", "blaablaa", "oijdfoigf", "jotain", "jotainjotain", "iijsodjf", "jsodijds"));
+        templates.add(new TemplateModels("Upper body", "Bench press", "Bent-over row", "Overhead press", "Biceps curl"));
+        templates.add(new TemplateModels("Lower body", "Leg press", "jodsiof", "ifjgiofjd", "dijd"));
+        templates.add(new TemplateModels("Abs", "blaablaa", "oijdfoigf", "jotain", "jotainjotain"));
 
     }
 

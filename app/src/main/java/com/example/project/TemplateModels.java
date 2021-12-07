@@ -7,17 +7,17 @@ public class TemplateModels {
     private  String exercise2;
     private  String exercise3;
     private  String exercise4;
-    private  String exercise5;
-    private  String exercise6;
+    //private  String exercise5;
+    //private  String exercise6;
 
-    public TemplateModels(String name, String exercise1, String exercise2, String exercise3, String exercise4, String exercise5, String exercise6) {
+    public TemplateModels(String name, String exercise1, String exercise2, String exercise3, String exercise4) {
         this.name = name;
         this.exercise1 = exercise1;
         this.exercise2 = exercise2;
         this.exercise3 = exercise3;
         this.exercise4 = exercise4;
-        this.exercise5 = exercise5;
-        this.exercise6 = exercise6;
+        //this.exercise5 = exercise5;
+        //this.exercise6 = exercise6;
     }
 
     public String getName(){
@@ -45,11 +45,12 @@ public class TemplateModels {
         return exercise4;
     }
 
-    public String getExercise5() {
+    /*public String getExercise5() {
         return exercise5;
     }
 
     public String getExercise6() {
         return exercise6;
     }
+    */
 }

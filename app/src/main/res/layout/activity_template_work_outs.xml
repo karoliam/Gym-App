@@ -1,100 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".TemplateWorkOuts">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        tools:context=".TemplateWorkOuts">
 
-    <TextView
-        android:id="@+id/exercise1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/exercise2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+        <EditText
+            android:id="@+id/weightEditText2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="37dp"
+            android:ems="10"
+            android:hint="@string/weightHint"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/repsEditText2"
+            app:layout_constraintEnd_toStartOf="@+id/repsEditText2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/repsEditText2"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/exercise2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/exercise3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        app:layout_constraintVertical_bias="0.747" />
+        <EditText
+            android:id="@+id/repsEditText2"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="271dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="271dp"
+            android:ems="10"
+            android:hint="@string/repsHint"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/weightEditText4"
+            app:layout_constraintEnd_toStartOf="@+id/setsEditText2"
+            app:layout_constraintStart_toEndOf="@+id/weightEditText2"
+            app:layout_constraintTop_toTopOf="@+id/nameTextView"
+            app:layout_constraintVertical_bias="0.113" />
 
-    <TextView
-        android:id="@+id/exercise3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/exercise4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        app:layout_constraintVertical_bias="0.795" />
+        <EditText
+            android:id="@+id/setsEditText2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="@string/setHint"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/repsEditText2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/repsEditText2" />
 
-    <TextView
-        android:id="@+id/exercise4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/exercise5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        app:layout_constraintVertical_bias="0.832" />
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/exercise5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/exercise6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        app:layout_constraintVertical_bias="0.873" />
+        <TextView
+            android:id="@+id/exercise1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="104dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/exercise6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        app:layout_constraintVertical_bias="0.82" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/exercise2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="242dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/exercise4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="20dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/weightEditText4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/weightEditText3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="37dp"
+            android:ems="10"
+            android:hint="@string/weightHint"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/repsEditText3"
+            app:layout_constraintEnd_toStartOf="@+id/repsEditText3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/repsEditText3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/repsEditText3"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="179dp"
+            android:layout_marginEnd="44dp"
+            android:ems="10"
+            android:hint="@string/repsHint"
+            android:inputType="number"
+            app:layout_constraintEnd_toStartOf="@+id/setsEditText3"
+            app:layout_constraintStart_toEndOf="@+id/weightEditText3"
+            app:layout_constraintTop_toTopOf="@+id/exercise2" />
+
+        <TextView
+            android:id="@+id/exercise3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/weightEditText3"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/setsEditText3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="@string/setHint"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/repsEditText3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/repsEditText3" />
+
+        <EditText
+            android:id="@+id/weightEditText4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:hint="@string/weightHint"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/repsEditText4"
+            app:layout_constraintEnd_toEndOf="@+id/weightEditText3"
+            app:layout_constraintStart_toStartOf="@+id/exercise4"
+            app:layout_constraintTop_toTopOf="@+id/repsEditText4" />
+
+        <EditText
+            android:id="@+id/setsEditText4"
+            android:layout_width="87dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="138dp"
+            android:ems="10"
+            android:hint="@string/setHint"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/setsEditText3"
+            app:layout_constraintTop_toTopOf="@+id/setsEditText3" />
+
+        <EditText
+            android:id="@+id/repsEditText4"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:hint="@string/repsHint"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/setsEditText4"
+            app:layout_constraintEnd_toEndOf="@+id/repsEditText3"
+            app:layout_constraintStart_toStartOf="@+id/repsEditText3" />
+
+        <EditText
+            android:id="@+id/weightEditText"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="37dp"
+            android:layout_marginBottom="45dp"
+            android:ems="10"
+            android:hint="@string/weightHint"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/exercise2"
+            app:layout_constraintEnd_toStartOf="@+id/repsEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/exercise1" />
+
+        <EditText
+            android:id="@+id/setsEditText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="@string/setHint"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/repsEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/repsEditText" />
+
+        <EditText
+            android:id="@+id/repsEditText"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="44dp"
+            android:ems="10"
+            android:hint="@string/repsHint"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/exercise2"
+            app:layout_constraintEnd_toStartOf="@+id/setsEditText"
+            app:layout_constraintStart_toEndOf="@+id/weightEditText"
+            app:layout_constraintTop_toTopOf="@+id/exercise1" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saveButton"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setsEditText4"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+
+
