@@ -39,6 +39,12 @@ public class OwnWorkoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 clearRecyclerView();
+                SharedPreferences sharedPreferences = getSharedPreferences("moves", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                Gson gson = new Gson();
+                String json = gson.toJson(mMoveList);
+                editor.putString("workout list", json);
+                editor.apply();
 
             }
         });

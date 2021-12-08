@@ -3,7 +3,7 @@ package com.example.project;
 import java.util.ArrayList;
 
 /**
- * Workout-luokka, jossa kasitellaan workoutteja
+ * Move-luokka, jossa kasitellaan workoutteja
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */
@@ -12,7 +12,7 @@ public class Move {
     private String gymWeight;
     private String reps;
     private String sets;
-    private ArrayList<Workout> workouts;
+    private ArrayList<DataBaseSingleton> workouts;
 
     /**
      *
@@ -64,5 +64,12 @@ public class Move {
         return sets;
     }
 
-
+    public ArrayList<String> getWorkouts() {
+        ArrayList <String> workouts = new ArrayList<>();
+        workouts.add(moveName);
+        workouts.add(gymWeight);
+        workouts.add(sets);
+        workouts.add(reps);
+        return workouts;
+    }
 }
