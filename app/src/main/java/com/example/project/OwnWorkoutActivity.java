@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class OwnWorkoutActivity extends AppCompatActivity {
-    ArrayList<Move> mWorkoutList;
+    ArrayList<Move> mMoveList;
     private RecyclerView mRecyclerView;
     private WorkoutAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -52,23 +52,23 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     }
 
     private void saveData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("moves", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(mWorkoutList);
+        String json = gson.toJson(mMoveList);
         editor.putString("workout list", json);
         editor.apply();
     }
 
     private void loadData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("moves", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("workout list", null);
         Type type = new TypeToken<ArrayList<Move>>() {}.getType();
-        mWorkoutList = gson.fromJson(json, type);
+        mMoveList = gson.fromJson(json, type);
 
-        if (mWorkoutList == null) {
-            mWorkoutList = new ArrayList<>();
+        if (mMoveList == null) {
+            mMoveList = new ArrayList<>();
         }
     }
 
@@ -76,7 +76,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recyclerview);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new WorkoutAdapter(mWorkoutList);
+        mAdapter = new WorkoutAdapter(mMoveList);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
@@ -102,11 +102,11 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     }
 
     private void insertItem(String line1, String line2, String line3, String line4) {
-        mWorkoutList.add(new Move(line1, line2, line3, line4));
-        mAdapter.notifyItemInserted(mWorkoutList.size());
+        mMoveList.add(new Move(line1, line2, line3, line4));
+        mAdapter.notifyItemInserted(mMoveList.size());
     }
     private void clearRecyclerView(){
-        mWorkoutList.clear();
+        mMoveList.clear();
         mAdapter.notifyDataSetChanged();
     }
 }

@@ -1,5 +1,7 @@
 package com.example.project;
 
+import java.util.ArrayList;
+
 /**
  * Workout-luokka, jossa kasitellaan workoutteja
  * @author Laura, Karoliina, Elias
@@ -10,6 +12,7 @@ public class Move {
     private String gymWeight;
     private String reps;
     private String sets;
+    private ArrayList<Workout> workouts;
 
     /**
      *
@@ -60,4 +63,6 @@ public class Move {
     public String getSets() {
         return sets;
     }
+
+
 }
