@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 
 public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder> {
-    private ArrayList<WorkoutClass> mWorkoutList;
+    private ArrayList<Move> mWorkoutList;
 
     public static class WorkoutViewHolder extends RecyclerView.ViewHolder {
         public TextView mExerciseTextview;
@@ -28,7 +28,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
         }
     }
 
-    public WorkoutAdapter(ArrayList<WorkoutClass> workoutList) {
+    public WorkoutAdapter(ArrayList<Move> workoutList) {
         mWorkoutList = workoutList;
     }
 
@@ -40,9 +40,9 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
 
     @Override
     public void onBindViewHolder(WorkoutViewHolder holder, int position) {
-        WorkoutClass currentItem = mWorkoutList.get(position);
+        Move currentItem = mWorkoutList.get(position);
 
-        holder.mExerciseTextview.setText(currentItem.getWorkoutName());
+        holder.mExerciseTextview.setText(currentItem.getMoveName());
         holder.mWeightTextview.setText(currentItem.getGymWeight());
         holder.mRepsTextview.setText(currentItem.getReps());
         holder.mSetsTextview.setText(currentItem.getSets());

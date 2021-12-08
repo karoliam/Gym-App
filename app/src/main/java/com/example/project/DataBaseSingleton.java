@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 
 public class DataBaseSingleton {
-    private ArrayList <WorkoutClass> workoutClassArrayList;
+    private ArrayList <Move> workoutClassArrayList;
     private static final DataBaseSingleton ourInstance = new DataBaseSingleton();
 
     /**
@@ -21,7 +21,7 @@ public class DataBaseSingleton {
     }
 
     private DataBaseSingleton(){
-        workoutClassArrayList = new ArrayList<WorkoutClass>();
+        workoutClassArrayList = new ArrayList<Move>();
 
     }
 
@@ -30,7 +30,7 @@ public class DataBaseSingleton {
      * @param workout lisataan uusi workout listaan
      */
 
-    public void addWorkout(WorkoutClass workout){
+    public void addWorkout(Move workout){
 
         workoutClassArrayList.add(workout);
     }
@@ -40,7 +40,7 @@ public class DataBaseSingleton {
      * @return palauttaa kaikki workoutit
      */
 
-    public ArrayList<WorkoutClass> getWorkouts(){
+    public ArrayList<Move> getWorkouts(){
         return workoutClassArrayList;
     }
 
@@ -50,7 +50,7 @@ public class DataBaseSingleton {
      * @return getteri palauttaa yhden workoutin
      */
 
-    public WorkoutClass getWorkout(int i){
+    public Move getWorkout(int i){
         return workoutClassArrayList.get(i);
     }
 }

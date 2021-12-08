@@ -5,8 +5,8 @@ package com.example.project;
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */
-public class WorkoutClass {
-    private String workoutName;
+public class Move {
+    private String moveName;
     private String gymWeight;
     private String reps;
     private String sets;
@@ -14,12 +14,12 @@ public class WorkoutClass {
     /**
      *
      * @param workoutName String workoutin nimi
-     * @param gymWeight int painojen paino
-     * @param reps int toistojen määrä
-     * @param sets int sarjojen määrä
+     * @param gymWeight String painojen paino
+     * @param reps String toistojen määrä
+     * @param sets String sarjojen määrä
      */
-    public WorkoutClass(String workoutName, String gymWeight, String reps, String sets) {
-        this.workoutName = workoutName;
+    public Move(String workoutName, String gymWeight, String reps, String sets) {
+        this.moveName = workoutName;
         this.gymWeight = gymWeight;
         this.reps = reps;
         this.sets = sets;
@@ -27,11 +27,11 @@ public class WorkoutClass {
 
     /**
      *
-     * @return palauttaa workoutin nimen
+     * @return palauttaa liikkeen nimen
      */
 
-    public String getWorkoutName() {
-        return workoutName;
+    public String getMoveName() {
+        return moveName;
     }
 
     /**

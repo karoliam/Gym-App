@@ -14,7 +14,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class OwnWorkoutActivity extends AppCompatActivity {
-    ArrayList<WorkoutClass> mWorkoutList;
+    ArrayList<Move> mWorkoutList;
     private RecyclerView mRecyclerView;
     private WorkoutAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -62,7 +62,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("workout list", null);
-        Type type = new TypeToken<ArrayList<WorkoutClass>>() {}.getType();
+        Type type = new TypeToken<ArrayList<Move>>() {}.getType();
         mWorkoutList = gson.fromJson(json, type);
 
         if (mWorkoutList == null) {
@@ -100,7 +100,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     }
 
     private void insertItem(String line1, String line2, String line3, String line4) {
-        mWorkoutList.add(new WorkoutClass(line1, line2, line3, line4));
+        mWorkoutList.add(new Move(line1, line2, line3, line4));
         mAdapter.notifyItemInserted(mWorkoutList.size());
     }
     private void clearRecyclerView(){
