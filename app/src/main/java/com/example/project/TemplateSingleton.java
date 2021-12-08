@@ -26,4 +26,8 @@ public class TemplateSingleton {
         return templates.get(i);
     }
 
+    public void saveTemplate(TemplateModels templateModels) {
+        templates.add(templateModels);
+    }
+
 }
