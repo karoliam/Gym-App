@@ -53,6 +53,11 @@ public class DataBaseSingleton {
         return workoutArrayList.get(i);
     }
 
+    /**
+     *
+     * @param workouts setteri asettaa workoutit ArrayListiin
+     */
+
     public void setWorkouts(ArrayList <Workout> workouts){
        this.workoutArrayList = workouts;
     }

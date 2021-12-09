@@ -14,7 +14,7 @@ import java.util.List;
 
 public class OwnWorkoutActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private WorkoutAdapter mAdapter;
+    private MoveAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private Workout workout = new  Workout();
 
@@ -23,9 +23,11 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_workout);
 
+        //New workout-nappia painamalla RecyclerView tyhjenee
         Button newworkoutbutton = findViewById(R.id.button_new);
         newworkoutbutton.setOnClickListener(v -> clearRecyclerView());
         loadData();
+        //Jos new workout - nappia ei paineta - ladataan data
         if(!newworkoutbutton.isPressed()){
             loadData();
         }
@@ -35,6 +37,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     }
 
     public void onPause() {
+        //Tallennetaan workout shared preferensseihin pause tilassa
         super.onPause();
         SharedPreferences sharedPreferences = getSharedPreferences("moves", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -45,6 +48,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     }
 
     private void loadData() {
+        //ladataan tiedot ja asetetaan workoutit workoutArrayListiin
         SharedPreferences sharedPreferences = getSharedPreferences("moves", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("workout list", null);
@@ -57,16 +61,18 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     }
 
     private void buildRecyclerView() {
+        //Luodaan RecyclerView
         mRecyclerView = findViewById(R.id.recyclerview);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new WorkoutAdapter(workout.getWorkout());
+        mAdapter = new MoveAdapter(workout.getWorkout());
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }
 
     private void setInsertButton() {
+        //Insert-nappia painamalla tiedot otetaan vastaan
         Button buttonInsert = findViewById(R.id.button_insert);
         buttonInsert.setOnClickListener(v -> {
             EditText exercise = findViewById(R.id.setTextExercise);
@@ -84,6 +90,9 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     }
 
     private void insertItem(String name, String weight, String reps, String sets) {
+        /*Syötetty liike lisätään Move-luokkaan ja näytetään RecyclerViewssa.
+        Liike haetaan DataBaseSingletonista */
+
         DataBaseSingleton dataBase = DataBaseSingleton.getInstance();
         workout.addMove(new Move(name, weight, reps, sets));
         dataBase.addWorkout(workout);
@@ -91,6 +100,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         //mAdapter.notifyItemInserted(DataBaseSingleton.getInstance().getWorkouts().size());
     }
     private void clearRecyclerView(){
+        //RecyclerViewn tyhjennys
         DataBaseSingleton.getInstance().getWorkouts().clear();
         mAdapter.notifyDataSetChanged();
     }
