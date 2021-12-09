@@ -3,53 +3,58 @@ package com.example.project;
 import java.util.ArrayList;
 
 /**
- * Singleton-luokka workouteista
+ * Singleton-luokka liikkeistä
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */
 
 public class DataBaseSingleton {
-    private ArrayList <Move> moveArrayList;
+    private ArrayList <Workout> workoutArrayList;
     private static final DataBaseSingleton ourInstance = new DataBaseSingleton();
 
     /**
      *
-     * @return palauttaa singletonin instanssin
+     * @return palauttaa singletonin instanssimuuttujan
      */
     public static DataBaseSingleton getInstance(){
         return ourInstance;
     }
 
     private DataBaseSingleton(){
-        moveArrayList = new ArrayList<Move>();
+        workoutArrayList = new ArrayList<Workout>();
     }
 
     /**
      *
-     * @param singlemove lisataan uusi singlemove listaan
+     * @param workout lisataan uusi liike listaan
      */
 
-    public void addMove(Move singlemove){
+    public void addWorkout(Workout workout){
 
-        moveArrayList.add(singlemove);
+        workoutArrayList.add(workout);
     }
 
     /**
      *
-     * @return palauttaa kaikki workoutit
+     * @return palauttaa kaikki liikkeet
      */
 
-    public ArrayList<Move> getMoves(){
-        return moveArrayList;
+    public ArrayList<Workout> getWorkouts(){
+        return workoutArrayList;
     }
 
     /**
      *
-     * @param i int - yksittaisen workoutin indeksi
-     * @return getteri palauttaa yhden workoutin
+     * @param i int - yksittaisen liikeen indeksi
+     * @return getteri palauttaa yhden liikkeen
      */
 
-    public Move getMove(int i){
-        return moveArrayList.get(i);
+    public Workout getWorkout(int i){
+        return workoutArrayList.get(i);
     }
+
+    public void setWorkouts(ArrayList <Workout> workouts){
+       this.workoutArrayList = workouts;
+    }
+
 }

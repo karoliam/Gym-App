@@ -60,19 +60,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/setTextExercise"
-        android:layout_marginStart="13dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="23dp"
+        android:layout_marginEnd="15dp"
         android:layout_toEndOf="@id/setTextExercise"
         android:text="insert" />
-
-    <Button
-        android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/button_insert"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/button_insert"
-        android:text="save" />
 
     <Button
         android:id="@+id/button_new"
@@ -82,7 +75,8 @@
         android:layout_below="@+id/button_insert"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="13dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="40dp"
         android:layout_toEndOf="@+id/setTextSets"

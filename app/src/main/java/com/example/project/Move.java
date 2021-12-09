@@ -1,9 +1,7 @@
 package com.example.project;
 
-import java.util.ArrayList;
-
 /**
- * Move-luokka, jossa kasitellaan workoutteja
+ * Move-luokka, jossa kasitellaan liikkeitä
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */
@@ -12,17 +10,16 @@ public class Move {
     private String gymWeight;
     private String reps;
     private String sets;
-    private ArrayList<DataBaseSingleton> workouts;
 
     /**
      *
-     * @param workoutName String workoutin nimi
+     * @param moveName String liikkeen nimi
      * @param gymWeight String painojen paino
      * @param reps String toistojen määrä
      * @param sets String sarjojen määrä
      */
-    public Move(String workoutName, String gymWeight, String reps, String sets) {
-        this.moveName = workoutName;
+    public Move(String moveName, String gymWeight, String reps, String sets) {
+        this.moveName = moveName;
         this.gymWeight = gymWeight;
         this.reps = reps;
         this.sets = sets;
@@ -64,12 +61,4 @@ public class Move {
         return sets;
     }
 
-    public ArrayList<String> getWorkouts() {
-        ArrayList <String> workouts = new ArrayList<>();
-        workouts.add(moveName);
-        workouts.add(gymWeight);
-        workouts.add(sets);
-        workouts.add(reps);
-        return workouts;
-    }
 }

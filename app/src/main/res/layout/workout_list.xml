@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:text="Exercise"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/exerciseTextview"
             android:layout_width="wrap_content"

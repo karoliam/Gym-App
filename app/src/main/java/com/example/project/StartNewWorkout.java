@@ -14,7 +14,7 @@ public class StartNewWorkout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_new);
 
-        Button ownWorkoutButton = (Button)findViewById(R.id.ownWorkoutButton);
+        Button ownWorkoutButton = findViewById(R.id.ownWorkoutButton);
 
         ownWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,7 +22,7 @@ public class StartNewWorkout extends AppCompatActivity {
                 startActivity(new Intent(StartNewWorkout.this, OwnWorkoutActivity.class));
             }
         });
-        Button templateWorkoutButton = (Button)findViewById(R.id.templateButton);
+        Button templateWorkoutButton = findViewById(R.id.templateButton);
 
         templateWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
