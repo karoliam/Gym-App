@@ -1,13 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Profile"
-    android:textSize="50sp">
 
-</TextView>
-</RelativeLayout>
+    <EditText
+        android:id="@+id/paino_view"
+        android:layout_width="159dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pituus_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profiili_kuva"
+        android:layout_width="148dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toStartOf="@+id/nimi_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <EditText
+        android:id="@+id/pituus_view"
+        android:layout_width="159dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profiili_kuva" />
+
+    <ListView
+        android:layout_width="403dp"
+        android:layout_height="303dp"
+        android:layout_marginTop="122dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paino_view" />
+
+    <TextView
+        android:id="@+id/nimi_view"
+        android:layout_width="170dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="31dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profiili_kuva"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="160dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
