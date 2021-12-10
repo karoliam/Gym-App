@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 /**
  * Statistics-luokka, jonka avulla saadaan tilastosivu näkyviin
  */
+
 public class StatisticsFragment extends Fragment {
     @Nullable
     @Override
