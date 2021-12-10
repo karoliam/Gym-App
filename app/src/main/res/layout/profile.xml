@@ -25,8 +25,6 @@
         android:layout_height="146dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toStartOf="@+id/nimi_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_person_24" />
@@ -50,18 +48,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paino_view" />
 
-    <TextView
-        android:id="@+id/nimi_view"
-        android:layout_width="170dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="31dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profiili_kuva"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/save_button"
         android:layout_width="160dp"
@@ -73,6 +59,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nimi_view"
+        android:layout_width="192dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
+        android:text=""
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profiili_kuva"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
