@@ -26,8 +26,8 @@ public class ProfileFragment extends Fragment {
     public static final String PITUUS = "pituus";
     public static final String PAINO = "paino";
 
-    private String pituus2;
-    private String paino2;
+    private int pituus2;
+    private int paino2;
 
 
 
@@ -64,13 +64,13 @@ public class ProfileFragment extends Fragment {
 
     public void loadData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        pituus2 = sharedPreferences.getString(PITUUS,"");
-        paino2 =  sharedPreferences.getString(PAINO,"");
+        pituus2 = sharedPreferences.getInt(PITUUS,0);
+        paino2 =  sharedPreferences.getInt(PAINO,0);
     }
 
     public void updateViews(){
-        pituus.setText(pituus2);
-        paino.setText(paino2);
+        pituus.setText(Integer.toString(pituus2));
+        paino.setText(Integer.toString(paino2));
     }
 
 }
