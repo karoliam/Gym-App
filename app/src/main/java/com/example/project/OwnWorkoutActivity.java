@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +27,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         //New workout-nappia painamalla RecyclerView tyhjenee
         Button newworkoutbutton = findViewById(R.id.button_new);
         newworkoutbutton.setOnClickListener(v -> clearRecyclerView());
-        loadData();
+
         //Jos new workout - nappia ei paineta - ladataan data
         if(!newworkoutbutton.isPressed()){
             loadData();
@@ -62,12 +63,17 @@ public class OwnWorkoutActivity extends AppCompatActivity {
 
     private void buildRecyclerView() {
         //Luodaan RecyclerView
+        Log.d("tagi","buildi väli 1");
         mRecyclerView = findViewById(R.id.recyclerview);
+        Log.d("tagi","buildi väli 2");
         mRecyclerView.setHasFixedSize(true);
+        Log.d("tagi","buildi väli 3");
         mLayoutManager = new LinearLayoutManager(this);
+        Log.d("tagi","buildi väli 4");
         mAdapter = new MoveAdapter(workout.getWorkout());
-
+        Log.d("tagi","buildi väli 5");
         mRecyclerView.setLayoutManager(mLayoutManager);
+        Log.d("tagi","buildi väli 6");
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -92,16 +98,25 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     private void insertItem(String name, String weight, String reps, String sets) {
         /*Syötetty liike lisätään Move-luokkaan ja näytetään RecyclerViewssa.
         Liike haetaan DataBaseSingletonista */
+        //Tässä jokin vialla tai luokassa Move/workout/Databasesingleton
 
         DataBaseSingleton dataBase = DataBaseSingleton.getInstance();
+        Log.d("tagi","vali1");
         workout.addMove(new Move(name, weight, reps, sets));
+        Log.d("tagi","vali2");
         dataBase.addWorkout(workout);
+        Log.d("tagi","vali3");
         buildRecyclerView();
+        Log.d("tagi","vali4");
         //mAdapter.notifyItemInserted(DataBaseSingleton.getInstance().getWorkouts().size());
     }
     private void clearRecyclerView(){
         //RecyclerViewn tyhjennys
+        //Tässä jokin vialla
+        Log.d("tagi","vali1 tyhjennys");
         DataBaseSingleton.getInstance().getWorkouts().clear();
+        Log.d("tagi","vali2 tyhjennys");
         mAdapter.notifyDataSetChanged();
+        Log.d("tagi","vali3 tyhjennys");
     }
 }
