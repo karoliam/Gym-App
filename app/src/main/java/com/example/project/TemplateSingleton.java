@@ -10,6 +10,7 @@ public class TemplateSingleton {
         return templateInstance;
     }
 
+
     private TemplateSingleton() {
         templates = new ArrayList<TemplateModels>();
         templates.add(new TemplateModels("Upper body", "Bench press", "Bent-over row", "Overhead press", "Biceps curl"));

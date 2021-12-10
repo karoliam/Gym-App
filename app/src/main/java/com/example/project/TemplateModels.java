@@ -1,7 +1,7 @@
 package com.example.project;
 
-public class TemplateModels {
 
+public class TemplateModels {
     private  String name;
     private  String exercise1;
     private  String exercise2;
@@ -25,6 +25,7 @@ public class TemplateModels {
     public String toString(){
         return name;
     }
+
 
     public String getExercise1() {
         return exercise1;
