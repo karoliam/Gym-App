@@ -1,20 +1,15 @@
 package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TemplateWorkOuts extends AppCompatActivity {
@@ -29,7 +24,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
         loadData();
         //Etsitään Save-button
         Button saveButton = findViewById(R.id.saveButton);
-
+        //Kun Save-buttonia painetaan toteutuu saveData metodi
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +41,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
         exerciseFourTV = findViewById(R.id.exercise4);
 
 
-        //Asetetaan tekstit Singletonin kautta paikoilleen
+        //Asetetaan tekstit Singletonin kautta harjoitusten TextVieweihin
         nameTV.setText(TemplateSingleton.getInstance().getTemplate(i).getName());
         exerciseOneTV.setText(TemplateSingleton.getInstance().getTemplate(i).getExercise1());
         exerciseTwoTV.setText(TemplateSingleton.getInstance().getTemplate(i).getExercise2());
@@ -56,7 +51,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
     }
 
 
-    //Etsitään EditText kentät id:n avulla ja lisätään käyttäjän syöttämät arvot ArrayListiin
+    //Etsitään EditText kentät id:n avulla ja lisätään käyttäjän syöttämät arvot Hashmapiin
     private void saveData() {
         weight1 = findViewById(R.id.weightEditText);
         weight2 = findViewById(R.id.weightEditText2);
@@ -86,7 +81,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
         templateHashmap.put("rep4", Integer.parseInt(rep4.getText().toString()));
 
     }
-    //Tallennetaan Arraylist Sharedpreferenceihin onPausessa
+    //Tallennetaan Hashmap Sharedpreferenceihin onPausessa
     @Override
     public void onPause () {
         super.onPause();
