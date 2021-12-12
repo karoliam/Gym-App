@@ -28,8 +28,8 @@ public class ProfileFragment extends Fragment {
     public static final String PAINO = "paino";
     public static final String NIMI = "nimi";
 
-    private int pituus2;
-    private int paino2;
+    private String pituus2;
+    private String paino2;
     private String nimi2;
 
 
@@ -60,8 +60,8 @@ public class ProfileFragment extends Fragment {
     public void saveData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(PITUUS, Integer.parseInt(pituus.getText().toString()));
-        editor.putInt(PAINO, Integer.parseInt(paino.getText().toString()));
+        editor.putString(PITUUS, pituus.getText().toString());
+        editor.putString(PAINO, paino.getText().toString());
         editor.putString(NIMI,nimi.getText().toString());
 
         editor.apply();
@@ -69,14 +69,14 @@ public class ProfileFragment extends Fragment {
 
     public void loadData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        pituus2 = sharedPreferences.getInt(PITUUS,0);
-        paino2 =  sharedPreferences.getInt(PAINO,0);
+        pituus2 = sharedPreferences.getString(PITUUS,"");
+        paino2 =  sharedPreferences.getString(PAINO,"");
         nimi2 = sharedPreferences.getString(NIMI,"");
     }
 
     public void updateViews(){
-        pituus.setText(Integer.toString(pituus2));
-        paino.setText(Integer.toString(paino2));
+        pituus.setText(pituus2);
+        paino.setText(paino2);
         nimi.setText(nimi2);
     }
 
