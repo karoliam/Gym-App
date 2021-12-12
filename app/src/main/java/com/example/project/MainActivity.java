@@ -2,13 +2,8 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         //alapalkkivalikko
         bottomNavigationView = findViewById(R.id.bottomNavigation);
-        //klikkaamalla alavalikosta eri kohteita aukea oma ikkuna
+        //klikkaamalla alavalikosta eri kohteita aukea oma fragmentti
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             Fragment fragment = null;
 

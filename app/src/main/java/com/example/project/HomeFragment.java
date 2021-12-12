@@ -23,13 +23,9 @@ public class HomeFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.home,container,false);
 
         Intent intent = new Intent(getActivity(), StartNewWorkout.class);
-        final Button button = (Button) rootView.findViewById(R.id.startNewActivity);
+        final Button button = rootView.findViewById(R.id.startNewActivity);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
+        button.setOnClickListener(v -> startActivity(intent));
 
         return rootView;
     }

@@ -6,10 +6,10 @@ package com.example.project;
  * @version 0.1
  */
 public class Move {
-    private String moveName;
-    private String gymWeight;
-    private String reps;
-    private String sets;
+    private final String moveName;
+    private final String gymWeight;
+    private final String reps;
+    private final String sets;
 
     /**
      *
