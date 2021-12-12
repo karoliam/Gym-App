@@ -3,54 +3,63 @@ package com.example.project;
 import java.util.ArrayList;
 
 /**
- * Singleton-luokka workouteista
+ * Singleton-luokka liikkeistä
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */
 
 public class DataBaseSingleton {
-    private ArrayList <WorkoutClass> workoutClassArrayList;
+    private ArrayList <Workout> workoutArrayList;
     private static final DataBaseSingleton ourInstance = new DataBaseSingleton();
 
     /**
      *
-     * @return palauttaa singletonin instanssin
+     * @return palauttaa singletonin instanssimuuttujan
      */
     public static DataBaseSingleton getInstance(){
         return ourInstance;
     }
 
     private DataBaseSingleton(){
-        workoutClassArrayList = new ArrayList<WorkoutClass>();
-
+        workoutArrayList = new ArrayList<Workout>();
     }
 
     /**
      *
-     * @param workout lisataan uusi workout listaan
+     * @param workout lisataan uusi liike listaan
      */
 
-    public void addWorkout(WorkoutClass workout){
+    public void addWorkout(Workout workout){
 
-        workoutClassArrayList.add(workout);
+        workoutArrayList.add(workout);
     }
 
     /**
      *
-     * @return palauttaa kaikki workoutit
+     * @return palauttaa kaikki liikkeet
      */
 
-    public ArrayList<WorkoutClass> getWorkouts(){
-        return workoutClassArrayList;
+    public ArrayList<Workout> getWorkouts(){
+        return workoutArrayList;
     }
 
     /**
      *
-     * @param i int - yksittaisen workoutin indeksi
-     * @return getteri palauttaa yhden workoutin
+     * @param i int - yksittaisen liikeen indeksi
+     * @return getteri palauttaa yhden liikkeen
      */
 
-    public WorkoutClass getWorkout(int i){
-        return workoutClassArrayList.get(i);
+    public Workout getWorkout(int i){
+        return workoutArrayList.get(i);
     }
+
+    /**
+     *
+     * @param workouts setteri asettaa workoutit ArrayListiin
+     */
+
+    public void setWorkouts(ArrayList <Workout> workouts){
+       this.workoutArrayList = workouts;
+    }
+
 }

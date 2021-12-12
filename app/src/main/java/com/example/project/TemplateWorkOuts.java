@@ -85,7 +85,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
     @Override
     public void onPause () {
         super.onPause();
-        SharedPreferences prefs = getSharedPreferences("templates", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("workouts", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         Gson Gson = new Gson();
         String json = Gson.toJson(templateHashmap);
@@ -96,7 +96,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
     //Datan deserialisointi
     private void loadData() {
         //Weights
-        SharedPreferences prefs = getSharedPreferences("templates", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("workouts", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = prefs.getString("saving templates", null);
         Type type = new TypeToken<HashMap<String, Integer>>() {}.getType();

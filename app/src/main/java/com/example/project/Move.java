@@ -1,25 +1,25 @@
 package com.example.project;
 
 /**
- * Workout-luokka, jossa kasitellaan workoutteja
+ * Move-luokka, jossa kasitellaan liikkeitä
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */
-public class WorkoutClass {
-    private String workoutName;
-    private String gymWeight;
-    private String reps;
-    private String sets;
+public class Move {
+    private final String moveName;
+    private final String gymWeight;
+    private final String reps;
+    private final String sets;
 
     /**
      *
-     * @param workoutName String workoutin nimi
-     * @param gymWeight int painojen paino
-     * @param reps int toistojen määrä
-     * @param sets int sarjojen määrä
+     * @param moveName String liikkeen nimi
+     * @param gymWeight String painojen paino
+     * @param reps String toistojen määrä
+     * @param sets String sarjojen määrä
      */
-    public WorkoutClass(String workoutName, String gymWeight, String reps, String sets) {
-        this.workoutName = workoutName;
+    public Move(String moveName, String gymWeight, String reps, String sets) {
+        this.moveName = moveName;
         this.gymWeight = gymWeight;
         this.reps = reps;
         this.sets = sets;
@@ -27,11 +27,11 @@ public class WorkoutClass {
 
     /**
      *
-     * @return palauttaa workoutin nimen
+     * @return palauttaa liikkeen nimen
      */
 
-    public String getWorkoutName() {
-        return workoutName;
+    public String getMoveName() {
+        return moveName;
     }
 
     /**
@@ -60,4 +60,5 @@ public class WorkoutClass {
     public String getSets() {
         return sets;
     }
+
 }

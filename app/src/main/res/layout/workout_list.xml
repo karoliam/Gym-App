@@ -17,12 +17,13 @@
             android:layout_height="wrap_content"
             android:text="Exercise"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/exerciseTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/exerciseText"
-            android:text="Exercise"
+            android:text="UserExercise"
             android:textSize="15sp" />
 
         <TextView
@@ -32,12 +33,13 @@
             android:layout_below="@+id/exerciseTextview"
             android:text="Weight"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/weightTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/weightText"
-            android:text="Weight"
+            android:text="UserWeight"
             android:textSize="15sp" />
         <TextView
             android:id="@+id/repsText"
@@ -46,12 +48,13 @@
             android:layout_below="@+id/weightTextview"
             android:text="Reps"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/repsTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/repsText"
-            android:text="Reps"
+            android:text="UserReps"
             android:textSize="15sp" />
         <TextView
             android:id="@+id/setsText"
@@ -60,12 +63,13 @@
             android:layout_below="@+id/repsTextview"
             android:text="Sets"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/setsTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setsText"
-            android:text="Sets"
+            android:text="UserSets"
             android:textSize="15sp" />
 
     </RelativeLayout>

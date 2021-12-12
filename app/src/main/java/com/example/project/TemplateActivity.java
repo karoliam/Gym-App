@@ -3,8 +3,6 @@ package com.example.project;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,7 +14,7 @@ public final static String EXTRA = "com.example.templateworkout";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template);
 
-        ListView templates = (ListView)findViewById(R.id.workOutTemplates);
+        ListView templates = findViewById(R.id.workOutTemplates);
 
         templates.setAdapter(new ArrayAdapter<TemplateModels>(
                 this,
@@ -24,13 +22,10 @@ public final static String EXTRA = "com.example.templateworkout";
                 TemplateSingleton.getInstance().getTemplates())
         );
 
-        templates.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent nextActivity = new Intent(TemplateActivity.this, TemplateWorkOuts.class);
-                nextActivity.putExtra(EXTRA, i);
-                startActivity(nextActivity);
-            }
+        templates.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent nextActivity = new Intent(TemplateActivity.this, TemplateWorkOuts.class);
+            nextActivity.putExtra(EXTRA, i);
+            startActivity(nextActivity);
         });
     }
 }
