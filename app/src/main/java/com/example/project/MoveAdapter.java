@@ -60,4 +60,10 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
     public int getItemCount() {
         return moveArrayList.size();
     }
+
+    public void clear() {
+        int size = moveArrayList.size();
+        moveArrayList.clear();
+        notifyItemRangeRemoved(0, size);
+    }
 }

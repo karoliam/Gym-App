@@ -10,6 +10,13 @@ public class Workout {
     ArrayList<Move> workout;
 
     /**
+     * Konstruktori luokalle Workout
+     */
+    public Workout(){
+        this.workout = new ArrayList<>();
+    }
+
+    /**
      *
      * @return ArrayList palauttaa listan yhdestä workoutista(harjoituksesta)
      */
