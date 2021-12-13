@@ -1,8 +1,15 @@
+/**
+ * Activity, jossa näkyy treeniohjelma ja avoimet tekstikentät, joihin käyttäjä
+ * voi syöttää painojen, toistojen ja sarjojen määrät. Täyttämisen jälkeen käyttäjä
+ * voi tallentaa suorituksen Profile-activityyn.
+ * @author Karoliina Multas
+ * @version 0.1
+ */
+
 package com.example.project;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,24 +18,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 
+
 public class TemplateWorkOuts extends AppCompatActivity {
+
     public HashMap<String, Integer> templateHashmap;
     private TextView exerciseOneTV, exerciseTwoTV, exerciseThreeTV, exerciseFourTV, nameTV;
     private EditText weight1,weight2,weight3,weight4, set1, set2, set3, set4, rep1, rep2, rep3, rep4;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template_work_outs);
+
         loadData();
         //Etsitään Save-button
         Button saveButton = findViewById(R.id.saveButton);
-        //Kun Save-buttonia painetaan toteutuu saveData metodi
+        //Kun Save-buttonia painetaan toteutuu saveData ja alertDialog metodit
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +47,8 @@ public class TemplateWorkOuts extends AppCompatActivity {
                 saveData();
             }
         });
-        //Etsitään harjoitusten TextViewit
+
+        //Etsitään treeniohjelman nimen ja yksittäisten liikkeiden TextViewit
         Bundle b = getIntent().getExtras();
         int i = b.getInt(TemplateActivity.EXTRA, 0);
         nameTV = findViewById(R.id.nameTextView);
@@ -46,7 +58,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
         exerciseFourTV = findViewById(R.id.exercise4);
 
 
-        //Asetetaan tekstit Singletonin kautta harjoitusten TextVieweihin
+        //Asetetaan tekstit Singletonin kautta treeniohjelman nimen ja liikkeiden TextVieweihin
         nameTV.setText(TemplateSingleton.getInstance().getTemplate(i).getName());
         exerciseOneTV.setText(TemplateSingleton.getInstance().getTemplate(i).getExercise1());
         exerciseTwoTV.setText(TemplateSingleton.getInstance().getTemplate(i).getExercise2());
@@ -54,7 +66,8 @@ public class TemplateWorkOuts extends AppCompatActivity {
         exerciseFourTV.setText(TemplateSingleton.getInstance().getTemplate(i).getExercise4());
 
     }
-
+    /*Metodi, joka luo alert dialog ikkunan, kun painetaan save-nappia. Ikkuna ilmoittaa
+      tietojen tallentuneen profiiliin.*/
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message)
@@ -72,7 +85,8 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
     }
 
-    //Etsitään EditText kentät id:n avulla ja lisätään käyttäjän syöttämät arvot Hashmapiin
+    /*Etsitään EditText kentät id:n avulla ja lisätään käyttäjän syöttämät kilot, sarjat,
+      ja toistot Hashmapiin*/
     private void saveData() {
         weight1 = findViewById(R.id.weightEditText);
         weight2 = findViewById(R.id.weightEditText2);
@@ -102,7 +116,8 @@ public class TemplateWorkOuts extends AppCompatActivity {
         templateHashmap.put("rep4", Integer.parseInt(rep4.getText().toString()));
 
     }
-    //Tallennetaan Hashmap Sharedpreferenceihin onPausessa
+
+    //Tallennetaan Hashmap Sharedpreferenceihin onPausessa kääntämällä se Jsoniksi
     @Override
     public void onPause () {
         super.onPause();
@@ -114,7 +129,8 @@ public class TemplateWorkOuts extends AppCompatActivity {
         editor.commit();
 
     }
-    //Datan deserialisointi
+
+    //Datan deserialisointi, eli muutetaan json takaisin gsoniksi
     private void loadData() {
         //Weights
         SharedPreferences prefs = getSharedPreferences("workouts", MODE_PRIVATE);
