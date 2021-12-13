@@ -15,6 +15,7 @@
             android:id="@+id/exerciseText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
             android:text="Exercise"
             android:textSize="15sp" />
 
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/exerciseText"
+            android:fontFamily="@font/roboto"
             android:text="UserExercise"
             android:textSize="15sp" />
 
@@ -31,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/exerciseTextview"
+            android:fontFamily="@font/roboto"
             android:text="Weight"
             android:textSize="15sp" />
 
@@ -39,13 +42,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/weightText"
+            android:fontFamily="@font/roboto"
             android:text="UserWeight"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/repsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/weightTextview"
+            android:fontFamily="@font/roboto"
             android:text="Reps"
             android:textSize="15sp" />
 
@@ -54,13 +60,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/repsText"
+            android:fontFamily="@font/roboto"
             android:text="UserReps"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/setsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/repsTextview"
+            android:fontFamily="@font/roboto"
             android:text="Sets"
             android:textSize="15sp" />
 
@@ -69,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setsText"
+            android:fontFamily="@font/roboto"
             android:text="UserSets"
             android:textSize="15sp" />
 

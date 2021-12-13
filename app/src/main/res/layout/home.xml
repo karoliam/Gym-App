@@ -3,12 +3,14 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/startNewActivity"
-    android:text="Start new workout"
-    android:textSize="20dp">
 
-</Button>
+    <Button
+        android:id="@+id/startNewActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:fontFamily="@font/work_sans"
+        android:text="Start new workout"
+        android:textSize="20dp">
+
+    </Button>
 </RelativeLayout>
