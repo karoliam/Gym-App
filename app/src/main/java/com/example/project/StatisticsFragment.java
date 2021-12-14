@@ -26,16 +26,16 @@ public class StatisticsFragment extends Fragment {
         //Yläpalkin nimi
         getActivity().setTitle("Recent workout");
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.statistics,container,false);
-        templateButton = (Button) rootView.findViewById(R.id.button);
-        ownButton = (Button) rootView.findViewById(R.id.button2);
+        templateButton = (Button) rootView.findViewById(R.id.buttonTemplate);
+        ownButton = (Button) rootView.findViewById(R.id.buttonOwn);
 
         Intent intent = new Intent(getActivity(), TemplateStatistics.class);
-        templateButton = rootView.findViewById(R.id.button);
+        templateButton = rootView.findViewById(R.id.buttonTemplate);
         templateButton.setOnClickListener(v -> startActivity(intent));
 
 
         Intent intent2 = new Intent(getActivity(), OwnStatistics.class);
-        ownButton = rootView.findViewById(R.id.button2);
+        ownButton = rootView.findViewById(R.id.buttonOwn);
         ownButton.setOnClickListener(v -> startActivity(intent2));
 
         return rootView;
