@@ -12,7 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
- * Home-fragment, jonka avulla saadaan kotisivu näkyviin
+ * Home-fragment, jonka avulla saadaan kotisivu nakyviin
+ * @author Laura Immonen
+ * @version 0.1
  * Apuna kaytetty: https://github.com/gurkanucar/BottomNavigationViewExample/
  */
 public class HomeFragment extends Fragment {

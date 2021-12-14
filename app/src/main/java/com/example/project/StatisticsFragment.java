@@ -12,7 +12,9 @@ import androidx.fragment.app.Fragment;
 
 
 /**
- * Statistics-fragment, jonka avulla saadaan tilastosivu näkyviin
+ * Statistics-fragment, jonka avulla saadaan tilastosivu nakyviin
+ * @author Elias Leipola
+ * @version 0.1
  */
 
 public class StatisticsFragment extends Fragment {
@@ -29,10 +31,13 @@ public class StatisticsFragment extends Fragment {
         templateButton = (Button) rootView.findViewById(R.id.buttonTemplate);
         ownButton = (Button) rootView.findViewById(R.id.buttonOwn);
 
+        //Nappula, jota painettaessa avautuu uusi activity
+
         Intent intent = new Intent(getActivity(), TemplateStatistics.class);
         templateButton = rootView.findViewById(R.id.buttonTemplate);
         templateButton.setOnClickListener(v -> startActivity(intent));
 
+        //Nappula, jota painettaessa avautuu uusi activity
 
         Intent intent2 = new Intent(getActivity(), OwnStatistics.class);
         ownButton = rootView.findViewById(R.id.buttonOwn);

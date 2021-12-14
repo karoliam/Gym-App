@@ -1,11 +1,4 @@
-/**
- * TemplateActivityssä on listview, johon haetaan treeniohjelmien nimet TemplateSingletonista.
- * Treeniohjelmien nimiä painamalla pääsee treeniohjelmaan, johon voi täyttää tyhjiin
- * tekstikenttiin käytetyt kilot, toistojen määrät ja sarjojen määrät.
- *
- * @author Karoliina Multas
- * @version 0.1
- */
+
 package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.Objects;
-
+/**
+ * TemplateActivityssa on listview, johon haetaan treeniohjelmien nimet TemplateSingletonista.
+ * Treeniohjelmien nimia painamalla paasee treeniohjelmaan, johon voi tayttaa tyhjiin
+ * tekstikenttiin kaytetyt kilot, toistojen maarat ja sarjojen maarat.
+ *
+ * @author Karoliina Multas
+ * @version 0.1
+ */
 public class TemplateActivity extends AppCompatActivity {
 public final static String EXTRA = "com.example.templateworkout";
 

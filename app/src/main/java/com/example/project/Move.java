@@ -1,7 +1,7 @@
 package com.example.project;
 
 /**
- * Move-luokka, jossa kasitellaan liikkeitä
+ * Move-luokka, jossa kasitellaan liikkeita
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */

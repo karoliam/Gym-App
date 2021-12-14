@@ -1,10 +1,4 @@
-/**
- * Activity, jossa näkyy treeniohjelma ja avoimet tekstikentät, joihin käyttäjä
- * voi syöttää painojen, toistojen ja sarjojen määrät. Täyttämisen jälkeen käyttäjä
- * voi tallentaa suorituksen Profile-activityyn.
- * @author Karoliina Multas
- * @version 0.1
- */
+
 
 package com.example.project;
 
@@ -24,8 +18,16 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * Activity, jossa nakyy treeniohjelma ja avoimet tekstikentat, joihin kayttaja
+ * voi syottaa painojen, toistojen ja sarjojen maarat. Tayttamisen jalkeen kayttaja
+ * voi tallentaa suorituksen Profile-activityyn.
+ * @author Karoliina Multas
+ * @version 0.1
+ */
 
 public class TemplateWorkOuts extends AppCompatActivity {
+
 
     public HashMap<String, Integer> templateHashmap;
     private TextView exerciseOneTV, exerciseTwoTV, exerciseThreeTV, exerciseFourTV, nameTV;
@@ -98,7 +100,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
       ja toistot Hashmapiin*/
 
     /**
-     * tallentaa käyttäjän syöttämät kilot, sarjat ja toistot hashmapiin
+     * tallentaa kayttajan syottomat kilot, sarjat ja toistot hashmapiin
      */
     private void saveData() {
 
@@ -201,7 +203,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
     }
 
     /**
-     * loadData metodi hakee datan shared preferenceistä
+     * loadData metodi hakee datan shared preferenceista
      */
     //Datan deserialisointi, eli muutetaan json takaisin gsoniksi
     private void loadData() {
