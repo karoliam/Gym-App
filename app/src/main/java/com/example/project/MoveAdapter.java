@@ -61,6 +61,7 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
         return moveArrayList.size();
     }
 
+    //Tyhjentää Move listan
     public void clear() {
         int size = moveArrayList.size();
         moveArrayList.clear();
