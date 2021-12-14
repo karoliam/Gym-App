@@ -1,14 +1,14 @@
-/**
- * Singleton-luokka, josta TemplateActivity saa Listviewiin nimet ja TemplateWorkOuts-
- * activity saa treeniliikkeiden nimet. Profiiliin tallennettujen treenien nimet saadaan
- * myös tästä luokasta.
- * @author Karoliina Multas
- * @version 0.1
- */
 
 package com.example.project;
 
 import java.util.ArrayList;
+/**
+ * Singleton-luokka, josta TemplateActivity saa Listviewiin nimet ja TemplateWorkOuts-
+ * activity saa treeniliikkeiden nimet. Profiiliin tallennettujen treenien nimet saadaan
+ * myos tasta luokasta.
+ * @author Karoliina Multas
+ * @version 0.1
+ */
 
 public class TemplateSingleton {
 
@@ -36,7 +36,7 @@ public class TemplateSingleton {
 
     /**
      *
-     * @return palauttaa koko arraylistin sisällön
+     * @return palauttaa koko arraylistin sisallon
      */
     public ArrayList<TemplateModels> getTemplates() {
         return templates;
@@ -45,7 +45,7 @@ public class TemplateSingleton {
     /**
      *
      * @param i templates arraylistin indeksi
-     * @return palauttaa yhden treenin arraylististä
+     * @return palauttaa yhden treenin arraylistista
      */
     public TemplateModels getTemplate(int i) {
         return templates.get(i);

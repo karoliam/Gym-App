@@ -7,6 +7,12 @@ import android.widget.Button;
 
 import java.util.Objects;
 
+/**
+ * Aktiviteetissa valittavissa template tai oma workout
+ * @author  Laura Immonen
+ * @version 0.1
+ */
+
 public class StartNewWorkout extends AppCompatActivity {
 
     @Override

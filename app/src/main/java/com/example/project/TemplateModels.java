@@ -1,11 +1,12 @@
+
+
+package com.example.project;
 /**
  * Luokka asettaa nimet TemplateWorkOuts luokan listviewin elementeille
- * ja luo nimet yksittäisille treeniliikkeille.
+ * ja luo nimet yksittaisille treeniliikkeille.
  * @author Karoliina Multas
  * @version 0.1
  */
-
-package com.example.project;
 
 public class TemplateModels {
     private  String name;
@@ -17,10 +18,10 @@ public class TemplateModels {
     /**
      *
      * @param name treeniohjelman nimi
-     * @param exercise1 ensimmäisen liikkeen nimi
+     * @param exercise1 ensimmaisen liikkeen nimi
      * @param exercise2 toisen liikkeen nimi
      * @param exercise3 kolmannen liikkeen nimi
-     * @param exercise4 neljännen liikkeen nimi
+     * @param exercise4 neljannen liikkeen nimi
      */
     public TemplateModels(String name, String exercise1, String exercise2, String exercise3, String exercise4) {
         this.name = name;
@@ -49,7 +50,7 @@ public class TemplateModels {
 
     /**
      *
-     * @return palauttaa ensimmäisen liikkeen
+     * @return palauttaa ensimmaisen liikkeen
      */
     public String getExercise1() {
         return exercise1;
@@ -74,7 +75,7 @@ public class TemplateModels {
 
     /**
      *
-     * @return palauttaa neljännen liikkeen
+     * @return palauttaa neljannen liikkeen
      */
     public String getExercise4() {
         return exercise4;

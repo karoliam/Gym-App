@@ -13,6 +13,11 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * Luokka, joka hakee viimeisimman tallennetun template-workoutin.
+ * @author Elias Leipola
+ * @version 0.1
+ */
 public class TemplateStatistics extends AppCompatActivity {
 
     public HashMap templateHashmap;
@@ -52,6 +57,10 @@ public class TemplateStatistics extends AppCompatActivity {
 
         loadData();
     }
+    /**
+     * Metodi, joka hakee template workoutissa kaytetyt painot, settien ja toistojen maarat.
+     * Haetut arvot asetetaan oikeisiin nakymiin.
+     */
     public void loadData(){
         //Weights
         SharedPreferences prefs = getSharedPreferences("workouts", MODE_PRIVATE);

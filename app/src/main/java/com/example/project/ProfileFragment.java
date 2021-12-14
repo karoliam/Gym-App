@@ -16,7 +16,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 /**
- * Profile-fragment, jonka avulla saadaan profiilisivu näkyviin
+ * Profile-fragment, jonka avulla saadaan profiilisivu nakyviin
+ * @author Elias Leipola
+ * @version 0.1
  */
 public class ProfileFragment extends Fragment {
     private EditText pituus;
@@ -66,6 +68,9 @@ public class ProfileFragment extends Fragment {
         return rootView;
     }
 
+    /**
+     * Metodi, joka tallentaa nimen, painon ja pituuden shared preferences kansioon.
+     */
     public void saveData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -76,19 +81,28 @@ public class ProfileFragment extends Fragment {
         editor.apply();
     }
 
+
+    /**
+     * Metodi, joka hakee tallennetun painon, pituuden ja nimen shared preferences kansiosta.
+     */
     public void loadData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         pituus2 = sharedPreferences.getString(PITUUS,"");
         paino2 =  sharedPreferences.getString(PAINO,"");
         nimi2 = sharedPreferences.getString(NIMI,"");
     }
-
+    /**
+     * Metodi, joka asettaa annetun painon, pituuden ja ian oikeisiin nakymiin.
+     */
     public void updateViews(){
         pituus.setText(pituus2);
         paino.setText(paino2);
         nimi.setText(nimi2);
 
     }
+    /**
+     * Metodi, jonka avulla tulee ponnahdusteksti save
+     */
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.dialog_title);

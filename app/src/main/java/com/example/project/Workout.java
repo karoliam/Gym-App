@@ -2,7 +2,7 @@ package com.example.project;
 import java.util.ArrayList;
 
 /**
- * Workout-luokka tekee ArrayListeja Move-elementeistä
+ * Workout-luokka tekee ArrayListeja Move-elementeista
  * @author Laura Immonen
  * @version 0.1
  */
@@ -18,7 +18,7 @@ public class Workout {
 
     /**
      *
-     * @return ArrayList palauttaa listan yhdestä workoutista(harjoituksesta)
+     * @return ArrayList palauttaa listan yhdesta workoutista(harjoituksesta)
      */
     public ArrayList<Move> getWorkout() {
 

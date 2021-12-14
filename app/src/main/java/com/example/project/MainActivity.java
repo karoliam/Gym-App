@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * Aktiviteetissa asetetaan fragmentti paalle
+ * @author Laura Immonen
+ * @version 0.1
+ */
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
