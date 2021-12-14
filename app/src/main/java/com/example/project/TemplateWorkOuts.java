@@ -48,6 +48,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
             }
         });
 
+
         //Etsitään treeniohjelman nimen ja yksittäisten liikkeiden TextViewit
         Bundle b = getIntent().getExtras();
         int i = b.getInt(TemplateActivity.EXTRA, 0);
@@ -67,7 +68,11 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
     }
     /*Metodi, joka luo alert dialog ikkunan, kun painetaan save-nappia. Ikkuna ilmoittaa
-      tietojen tallentuneen profiiliin.*/
+      tietojen tallentuneen.*/
+
+    /**
+     * Luo alert dialog ikkunan, joka ilmoittaa tietojen tallentuneen.
+     */
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message)
@@ -87,6 +92,10 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
     /*Etsitään EditText kentät id:n avulla ja lisätään käyttäjän syöttämät kilot, sarjat,
       ja toistot Hashmapiin*/
+
+    /**
+     * tallentaa käyttäjän syöttämät kilot, sarjat ja toistot hashmapiin
+     */
     private void saveData() {
         weight1 = findViewById(R.id.weightEditText);
         weight2 = findViewById(R.id.weightEditText2);
@@ -118,6 +127,10 @@ public class TemplateWorkOuts extends AppCompatActivity {
     }
 
     //Tallennetaan Hashmap Sharedpreferenceihin onPausessa kääntämällä se Jsoniksi
+
+    /**
+     * onPausessa tallennetaan hashmap shared preferenceihin
+     */
     @Override
     public void onPause () {
         super.onPause();
@@ -130,6 +143,9 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
     }
 
+    /**
+     * loadData metodi hakee datan shared preferenceistä
+     */
     //Datan deserialisointi, eli muutetaan json takaisin gsoniksi
     private void loadData() {
         //Weights

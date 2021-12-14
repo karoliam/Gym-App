@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ulkoasu: Karoliina Multas -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,27 +15,48 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonTemplate"
             android:layout_width="143dp"
             android:layout_height="73dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="109dp"
+            android:fontFamily="@font/work_sans"
             android:text="Template workout"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/buttonOwn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.557" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonOwn"
             android:layout_width="129dp"
             android:layout_height="66dp"
-            android:layout_marginTop="109dp"
-            android:layout_marginBottom="383dp"
+            android:fontFamily="@font/work_sans"
             android:text="Own workout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.676" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/vaaleenpun" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dumbbell" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

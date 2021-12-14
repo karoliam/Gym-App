@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ulkoasu: Karoliina Multas -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,6 +23,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/weightHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/repsEditText2"
             app:layout_constraintEnd_toStartOf="@+id/repsEditText2"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +41,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/repsHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/weightEditText4"
             app:layout_constraintEnd_toStartOf="@+id/setsEditText2"
             app:layout_constraintStart_toEndOf="@+id/weightEditText2"
@@ -54,6 +57,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/setHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/repsEditText2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/repsEditText2" />
@@ -116,6 +120,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/weightHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/repsEditText3"
             app:layout_constraintEnd_toStartOf="@+id/repsEditText3"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,6 +137,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/repsHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/setsEditText3"
             app:layout_constraintStart_toEndOf="@+id/weightEditText3"
             app:layout_constraintTop_toTopOf="@+id/exercise2" />
@@ -157,6 +163,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/setHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/repsEditText3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/repsEditText3" />
@@ -169,6 +176,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/weightHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/repsEditText4"
             app:layout_constraintEnd_toEndOf="@+id/weightEditText3"
             app:layout_constraintStart_toStartOf="@+id/exercise4"
@@ -184,7 +192,8 @@
             android:hint="@string/setHint"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="@+id/setsEditText3"
-            app:layout_constraintTop_toTopOf="@+id/setsEditText3" />
+            app:layout_constraintTop_toTopOf="@+id/setsEditText3"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/repsEditText4"
@@ -194,6 +203,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/repsHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/setsEditText4"
             app:layout_constraintEnd_toEndOf="@+id/repsEditText3"
             app:layout_constraintStart_toStartOf="@+id/repsEditText3" />
@@ -210,6 +220,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/weightHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/exercise2"
             app:layout_constraintEnd_toStartOf="@+id/repsEditText"
             app:layout_constraintStart_toStartOf="parent"
@@ -224,6 +235,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/setHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/repsEditText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/repsEditText" />
@@ -239,6 +251,7 @@
             android:fontFamily="@font/roboto"
             android:hint="@string/repsHint"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/exercise2"
             app:layout_constraintEnd_toStartOf="@+id/setsEditText"
             app:layout_constraintStart_toEndOf="@+id/weightEditText"

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ulkoasu: Karoliina Multas -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,200 +11,229 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
         android:gravity="center"
         tools:context=".MainActivity">
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/exercise1TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="54dp"
+            android:fontFamily="@font/work_sans"
             android:text="Exercise 1"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/exercise2TV"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/weight1View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="101dp"
-            android:layout_marginEnd="103dp"
-            android:layout_marginBottom="611dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/reps1View"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/reps1View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <TextView
-            android:id="@+id/sets1View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="103dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="16dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/reps1View"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="54dp"
-            android:layout_marginBottom="28dp"
-            android:text="Exercise 2"
-            app:layout_constraintBottom_toTopOf="@+id/reps2View"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/reps1View" />
-
-        <TextView
-            android:id="@+id/weight2View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="104dp"
-            android:layout_marginEnd="103dp"
-            android:layout_marginBottom="113dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/weight3View"
-            app:layout_constraintEnd_toStartOf="@+id/reps2View"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weight1View" />
-
-        <TextView
-            android:id="@+id/reps2View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="103dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="54dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/textView9"
-            app:layout_constraintStart_toEndOf="@+id/weight2View"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-        <TextView
-            android:id="@+id/sets2View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="106dp"
-            android:layout_marginTop="105dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="110dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/sets3View"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/reps2View"
-            app:layout_constraintTop_toBottomOf="@+id/sets1View" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="177dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="176dp"
-            android:text="Exercise 3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/reps2View" />
-
-        <TextView
-            android:id="@+id/weight3View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="29dp"
-            android:layout_marginEnd="85dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/reps3View"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/reps3View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="23dp"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/weight3View"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <TextView
-            android:id="@+id/sets3View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="110dp"
-            android:layout_marginEnd="16dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/reps3View"
-            app:layout_constraintTop_toBottomOf="@+id/sets2View" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="179dp"
-            android:layout_marginTop="49dp"
-            android:layout_marginEnd="174dp"
-            android:text="Exercise 4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/reps3View" />
-
-        <TextView
-            android:id="@+id/weight4View"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="94dp"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weight3View" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.169" />
 
         <TextView
             android:id="@+id/reps4View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
-            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
             android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/weight4View"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/exercise4TV"
+            app:layout_constraintStart_toStartOf="@+id/exercise4TV"
+            app:layout_constraintTop_toBottomOf="@+id/exercise4TV" />
+
+        <TextView
+            android:id="@+id/sets1View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise2TV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/reps1View"
+            app:layout_constraintTop_toBottomOf="@+id/exercise1TV" />
+
+        <TextView
+            android:id="@+id/weight2View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise3TV"
+            app:layout_constraintEnd_toStartOf="@+id/reps2View"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise2TV" />
+
+        <TextView
+            android:id="@+id/reps3View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise4TV"
+            app:layout_constraintEnd_toEndOf="@+id/exercise3TV"
+            app:layout_constraintStart_toStartOf="@+id/exercise3TV"
+            app:layout_constraintTop_toBottomOf="@+id/exercise3TV" />
+
+        <TextView
+            android:id="@+id/exercise4TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans"
+            android:text="Exercise 4"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise3TV"
+            app:layout_constraintVertical_bias="0.504" />
+
+        <TextView
+            android:id="@+id/weight4View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/reps4View"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise4TV" />
+
+        <TextView
+            android:id="@+id/exercise3TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans"
+            android:text="Exercise 3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise2TV"
+            app:layout_constraintVertical_bias="0.357" />
+
+        <TextView
+            android:id="@+id/sets3View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise4TV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/reps3View"
+            app:layout_constraintTop_toBottomOf="@+id/exercise3TV"
+            app:layout_constraintVertical_bias="0.14" />
+
+        <TextView
+            android:id="@+id/reps1View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise2TV"
+            app:layout_constraintEnd_toEndOf="@+id/exercise1TV"
+            app:layout_constraintStart_toStartOf="@+id/exercise1TV"
+            app:layout_constraintTop_toBottomOf="@+id/exercise1TV" />
+
+        <TextView
+            android:id="@+id/reps2View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise3TV"
+            app:layout_constraintEnd_toEndOf="@+id/exercise2TV"
+            app:layout_constraintStart_toStartOf="@+id/exercise2TV"
+            app:layout_constraintTop_toBottomOf="@+id/exercise2TV" />
+
+        <TextView
+            android:id="@+id/exercise2TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans"
+            android:text="Exercise 2"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.306" />
+
+        <TextView
+            android:id="@+id/weight3View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise4TV"
+            app:layout_constraintEnd_toStartOf="@+id/reps3View"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise3TV" />
+
+        <TextView
+            android:id="@+id/sets2View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise3TV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/reps2View"
+            app:layout_constraintTop_toBottomOf="@+id/exercise2TV" />
 
         <TextView
             android:id="@+id/sets4View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/roboto"
             android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/reps4View"
-            app:layout_constraintTop_toBottomOf="@+id/sets3View" />
+            app:layout_constraintTop_toBottomOf="@+id/exercise4TV" />
+
+        <TextView
+            android:id="@+id/weight1View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:fontFamily="@font/roboto"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/exercise2TV"
+            app:layout_constraintEnd_toStartOf="@+id/reps1View"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise1TV" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/work_sans_bold"
+            android:text="Template workout"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
