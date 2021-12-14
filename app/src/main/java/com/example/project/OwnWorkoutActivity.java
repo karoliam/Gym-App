@@ -1,11 +1,16 @@
 package com.example.project;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,18 +30,26 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     private MoveAdapter workoutAdapter;
     private RecyclerView.LayoutManager workoutLayoutManager;
     private Workout workout = new  Workout();
+    DataBaseSingleton dataBase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_workout);
-
+        dataBase = DataBaseSingleton.getInstance();
         buildRecyclerView();
         setInsertButton();
 
         Button saveButton = findViewById(R.id.button_save);
-        saveButton.setOnClickListener(v -> clearRecyclerView());
+        saveButton.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              alertDialog();
+                                              clearRecyclerView();
+                                          }
 
+    });
     }
 
     /**
@@ -46,6 +59,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     public void onPause() {
         //Tallennetaan workout shared preferensseihin pause tilassa
         super.onPause();
+        dataBase.addWorkout(workout);
         SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
@@ -150,12 +164,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         /*Syötetty liike lisätään Move-luokkaan ja näytetään RecyclerViewssa.
         Liike haetaan DataBaseSingletonista */
 
-        DataBaseSingleton dataBase = DataBaseSingleton.getInstance();
-        Log.d("tagi","vali1");
         workout.addMove(new Move(name, weight, reps, sets));
-        Log.d("tagi","vali2");
-        dataBase.addWorkout(workout);
-        Log.d("tagi","vali3");
     }
 
     /**
@@ -167,111 +176,20 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         Log.d("tagi","2");
         startActivity(new Intent(OwnWorkoutActivity.this, StartNewWorkout.class));
     }
-}
-
-
-/*
-package com.example.project;
-
-
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-
-public class OwnWorkoutActivity extends AppCompatActivity {
-    private ArrayList<Move> workoutList;
-    private MoveAdapter workoutAdapter;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_own_workout);
-
-        //Kun clear-nappia painetaan, lista tyhjenee
-        Button clearButton = findViewById(R.id.button_clear);
-        clearButton.setOnClickListener(v -> clearWorkout());
-
-        //Jos ei ole painettu clear-nappia, ladataan data
-        if(!clearButton.isPressed()){
-            loadData();
-        }
-
-        //Syötetty teksti asetetaan paikoille
-        buildRecyclerView();
-        setInsertButton();
-
-    }
-
-    //onPause()-tilassa tallennetaan data shared preferences
-    public void onPause() {
-        super.onPause();
-        SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(workoutList);
-        editor.putString("Own workout", json);
-        editor.apply();
-    }
-
-    //Ladataan lista liikkeistä
-    private void loadData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("Own workout", null);
-        Type type = new TypeToken<ArrayList<Move>>() {}.getType();
-        workoutList = gson.fromJson(json, type);
-
-        if (workoutList == null) {
-            workoutList = new ArrayList<>();
-        }
-    }
-
-    //Rakennetaan Recycler View:n sisälle lista liikkeistä
-    private void buildRecyclerView() {
-        RecyclerView workoutRecyclerView = findViewById(R.id.recyclerview);
-        workoutRecyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager workoutLayoutManager = new LinearLayoutManager(this);
-        workoutAdapter = new MoveAdapter(workoutList);
-        workoutRecyclerView.setLayoutManager(workoutLayoutManager);
-        workoutRecyclerView.setAdapter(workoutAdapter);
-    }
-
-    //Kun insert-nappia painetaan, kerätään syötetty teksti ja tyhjennetään näkymät
-    private void setInsertButton() {
-        Button buttonInsert = findViewById(R.id.button_insert);
-        buttonInsert.setOnClickListener(v -> {
-            EditText exercise = findViewById(R.id.setTextExercise);
-            EditText weight = findViewById(R.id.setTextWeight);
-            EditText reps = findViewById(R.id.setTextReps);
-            EditText sets = findViewById(R.id.setTextSets);
-            insertExercise(exercise.getText().toString(),weight.getText().toString(),
-                    reps.getText().toString(), sets.getText().toString());
-            exercise.setText("");
-            weight.setText("");
-            reps.setText("");
-            sets.setText("");
+    private void alertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.dialog_message)
+                .setTitle(R.string.dialog_title);
+        AlertDialog dialog = builder.create();
+        builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                finish();
+                Toast.makeText(getApplicationContext(),"Workout saved!",
+                        Toast.LENGTH_SHORT).show();
+            }
         });
-    }
+        dialog.setTitle("Saved!");
+        dialog.show();
 
-    //Syötetty teksti lisätään listalle Move-luokan avulla
-    private void insertExercise(String name, String weight, String reps, String sets) {
-        workoutList.add(new Move(name, weight, reps, sets));
-        workoutAdapter.notifyItemInserted(workoutList.size());
-    }
-
-    //Tyhjennetään lista
-    private void clearWorkout(){
-        workoutList.clear();
-        workoutAdapter.notifyDataSetChanged();
     }
 }
-
- */

@@ -68,7 +68,7 @@
         android:text="insert" />
 
     <Button
-        android:id="@+id/button_clear"
+        android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -80,6 +80,6 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="40dp"
         android:layout_toEndOf="@+id/setTextSets"
-        android:text="clear" />
+        android:text="save" />
 
 </RelativeLayout>
