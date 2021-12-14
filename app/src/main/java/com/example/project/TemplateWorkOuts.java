@@ -72,7 +72,6 @@ public class TemplateWorkOuts extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message)
                 .setTitle(R.string.dialog_title);
-        AlertDialog dialog = builder.create();
         builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 finish();
@@ -80,6 +79,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+        AlertDialog dialog = builder.create();
         dialog.setTitle("Saved!");
         dialog.show();
 

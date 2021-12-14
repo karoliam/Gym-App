@@ -9,7 +9,7 @@
     <string name="repsHint">Reps</string>
     <string name="setHint">Sets</string>
     <string name="saveButton">Save</string>
-    <string name="dialog_message">Your workout is saved in the profile</string>
+    <string name="dialog_message">Your workout is saved in the statistics</string>
     <string name="dialog_title">Saved!</string>
     <string name="ok_button">Ok</string>
 </resources>
