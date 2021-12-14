@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +24,7 @@ public class ProfileFragment extends Fragment {
     private EditText nimi;
     private Button saveButton;
 
+
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String PITUUS = "pituus";
     public static final String PAINO = "paino";
@@ -31,6 +33,7 @@ public class ProfileFragment extends Fragment {
     private String pituus2;
     private String paino2;
     private String nimi2;
+
 
 
 
@@ -43,6 +46,8 @@ public class ProfileFragment extends Fragment {
         paino = (EditText) rootView.findViewById(R.id.paino_view);
         nimi = (EditText) rootView.findViewById(R.id.nimi_view);
         saveButton = (Button) rootView.findViewById(R.id.save_button);
+
+
 
 
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +83,7 @@ public class ProfileFragment extends Fragment {
         pituus.setText(pituus2);
         paino.setText(paino2);
         nimi.setText(nimi2);
+
     }
 
 }

@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
+
 
         <EditText
             android:id="@+id/paino_view"
@@ -47,16 +49,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profiili_kuva" />
 
-    <ListView
-        android:layout_width="403dp"
-        android:layout_height="306dp"
-        android:layout_marginTop="122dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paino_view"
-        />
-
-    <Button
+        <Button
         android:id="@+id/save_button"
         android:layout_width="160dp"
         android:layout_height="72dp"
@@ -83,6 +76,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/profiili_kuva"
             app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
