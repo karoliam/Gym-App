@@ -26,6 +26,7 @@ import java.util.HashMap;
 
 /**
  * Statistics-luokka, jonka avulla saadaan tilastosivu näkyviin
+ * @author Elias
  */
 
 public class StatisticsFragment extends Fragment {
@@ -43,11 +44,16 @@ public class StatisticsFragment extends Fragment {
         templateButton = (Button) rootView.findViewById(R.id.button);
         ownButton = (Button) rootView.findViewById(R.id.button2);
 
+        /**
+         * Nappula, jota painettaessa avautuu uusi activity
+         */
         Intent intent = new Intent(getActivity(), TemplateStatistics.class);
         templateButton = rootView.findViewById(R.id.button);
         templateButton.setOnClickListener(v -> startActivity(intent));
 
-
+        /**
+         * Nappula, jota painettaessa avautuu uusi activity
+         */
         Intent intent2 = new Intent(getActivity(), OwnStatistics.class);
         ownButton = rootView.findViewById(R.id.button2);
         ownButton.setOnClickListener(v -> startActivity(intent2));

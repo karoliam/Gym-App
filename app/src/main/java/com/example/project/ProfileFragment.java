@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 /**
  * Profile-luokka, jonka avulla saadaan profiilisivu näkyviin
+ * @author Elias
  */
 public class ProfileFragment extends Fragment {
     private EditText pituus;
@@ -62,6 +63,9 @@ public class ProfileFragment extends Fragment {
         return rootView;
     }
 
+    /**
+     * Metodi, joka tallentaa nimen, painon ja pituuden shared preferences kansioon.
+     */
     public void saveData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -72,6 +76,9 @@ public class ProfileFragment extends Fragment {
         editor.apply();
     }
 
+    /**
+     * Metodi, joka hakee tallennetun painon, pituuden ja nimen shared preferences kansiosta.
+     */
     public void loadData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         pituus2 = sharedPreferences.getString(PITUUS,"");
@@ -79,6 +86,9 @@ public class ProfileFragment extends Fragment {
         nimi2 = sharedPreferences.getString(NIMI,"");
     }
 
+    /**
+     * Metodi, joka asettaa annetun painon, pituuden ja ian oikeisiin nakymiin.
+     */
     public void updateViews(){
         pituus.setText(pituus2);
         paino.setText(paino2);
