@@ -43,12 +43,11 @@ public class OwnWorkoutActivity extends AppCompatActivity {
 
         Button saveButton = findViewById(R.id.button_save);
         saveButton.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-                                              alertDialog();
-                                          }
-
-    });
+            @Override
+            public void onClick(View v) {
+                alertDialog();
+            }
+        });
     }
 
     /**
@@ -65,22 +64,6 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         String json = gson.toJson(DataBaseSingleton.getInstance().getWorkouts());
         editor.putString("workout list", json);
         editor.apply();
-    }
-
-    //Tässä ei tarvita, tarvitaan statseissa
-    private void loadData() {
-        //ladataan tiedot ja asetetaan workoutit workoutArrayListiin
-        SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("workout list", null);
-        if(json!=null) {
-            TypeToken<List<Workout>> token = new TypeToken<List<Workout>>() {
-            };
-            List<Workout> workoutList = gson.fromJson(json, token.getType());
-            ArrayList<Workout> workoutArrayList = new ArrayList<>(workoutList.size());
-            workoutArrayList.addAll(workoutList);
-            DataBaseSingleton.getInstance().setWorkouts(workoutArrayList);
-        }
     }
 
     /**
@@ -175,6 +158,11 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         Log.d("tagi","2");
         startActivity(new Intent(OwnWorkoutActivity.this, StartNewWorkout.class));
     }
+
+    /**
+     * ponnahdusikkuna, joka ilmoittaa workoutin tallennuksesta
+     * ok-nappia painamalla toteutetaan clearRecyclerView-metodia
+     */
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message)
