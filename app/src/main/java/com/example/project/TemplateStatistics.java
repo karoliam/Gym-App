@@ -11,6 +11,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class TemplateStatistics extends AppCompatActivity {
 
@@ -34,6 +35,8 @@ public class TemplateStatistics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template_statistics);
+        //Yläpalkin nimi
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Recent template");
         weight1 = (TextView) findViewById(R.id.weight1View);
         weight2 = (TextView) findViewById(R.id.weight2View);
         weight3 = (TextView) findViewById(R.id.weight3View);

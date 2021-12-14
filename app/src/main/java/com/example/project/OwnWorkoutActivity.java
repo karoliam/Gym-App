@@ -1,27 +1,22 @@
 package com.example.project;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Objects;
 
 /**
  * OwnWorkoutActitivy tallentaa oman workoutin shared preferenses-kansioon
- * @author Laura
+ * @author Laura Immonen
  * @version 0.1
  */
 
@@ -29,25 +24,22 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     private RecyclerView workoutRecyclerView;
     private MoveAdapter workoutAdapter;
     private RecyclerView.LayoutManager workoutLayoutManager;
-    private Workout workout = new  Workout();
-    DataBaseSingleton dataBase;
+    private final Workout workout = new  Workout();
+    private DataBaseSingleton dataBase;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_workout);
+        //Yläpalkin nimi
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Add own workout");
         dataBase = DataBaseSingleton.getInstance();
         buildRecyclerView();
         setInsertButton();
 
         Button saveButton = findViewById(R.id.button_save);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog();
-            }
-        });
+        saveButton.setOnClickListener(v -> alertDialog());
     }
 
     /**
@@ -55,7 +47,6 @@ public class OwnWorkoutActivity extends AppCompatActivity {
      */
 
     public void onPause() {
-        //Tallennetaan workout shared preferensseihin pause tilassa
         super.onPause();
         dataBase.addWorkout(workout);
         SharedPreferences sharedPreferences = getSharedPreferences("workouts", MODE_PRIVATE);
@@ -71,18 +62,11 @@ public class OwnWorkoutActivity extends AppCompatActivity {
      */
 
     private void buildRecyclerView() {
-        //Luodaan RecyclerView
-        Log.d("tagi","buildi väli 1");
         workoutRecyclerView = findViewById(R.id.recyclerview);
-        Log.d("tagi","buildi väli 2");
         workoutRecyclerView.setHasFixedSize(true);
-        Log.d("tagi","buildi väli 3");
         workoutLayoutManager = new LinearLayoutManager(this);
-        Log.d("tagi","buildi väli 4");
         workoutAdapter = new MoveAdapter(workout.getWorkout());
-        Log.d("tagi","buildi väli 5");
         workoutRecyclerView.setLayoutManager(workoutLayoutManager);
-        Log.d("tagi","buildi väli 6");
         workoutRecyclerView.setAdapter(workoutAdapter);
     }
 
@@ -143,8 +127,6 @@ public class OwnWorkoutActivity extends AppCompatActivity {
      */
 
     private void insertItem(String name, String weight, String reps, String sets) {
-        /*Syötetty liike lisätään Move-luokkaan ja näytetään RecyclerViewssa.
-        Liike haetaan DataBaseSingletonista */
 
         workout.addMove(new Move(name, weight, reps, sets));
     }
@@ -153,27 +135,23 @@ public class OwnWorkoutActivity extends AppCompatActivity {
      * metodi tyhjentaa RecyclerView:n ja palaa edelliselle sivulle.
      */
     private void clearRecyclerView(){
-        Log.d("tagi","1");
         workoutAdapter.notifyDataSetChanged();
-        Log.d("tagi","2");
         startActivity(new Intent(OwnWorkoutActivity.this, StartNewWorkout.class));
     }
 
     /**
-     * ponnahdusikkuna, joka ilmoittaa workoutin tallennuksesta
+     * Ponnahdusikkuna, joka ilmoittaa workoutin tallennuksesta
      * ok-nappia painamalla toteutetaan clearRecyclerView-metodia
      */
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message)
                 .setTitle(R.string.dialog_title);
-        builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
-                Toast.makeText(getApplicationContext(),"Workout saved!",
-                        Toast.LENGTH_SHORT).show();
-                clearRecyclerView();
-            }
+        builder.setPositiveButton(R.string.ok_button, (dialog, id) -> {
+            finish();
+            Toast.makeText(getApplicationContext(),"Workout saved!",
+                    Toast.LENGTH_SHORT).show();
+            clearRecyclerView();
         });
         AlertDialog dialog = builder.create();
         dialog.setTitle("Saved!");

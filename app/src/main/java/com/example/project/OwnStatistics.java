@@ -3,15 +3,19 @@ package com.example.project;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+/**
+ * Tulostetaan viimeiseksi tallennettu oma workout
+ * @author Laura Immonen
+ * @version 0.1
+ */
 
 public class OwnStatistics extends AppCompatActivity {
 
@@ -25,6 +29,8 @@ public class OwnStatistics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_statistics);
+        //Yläpalkin nimi
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Recent own workout");
 
         loadWorkouts();
         setLastWorkout();
@@ -45,15 +51,12 @@ public class OwnStatistics extends AppCompatActivity {
             workoutArrayList = new ArrayList<>(workoutList.size());
             workoutArrayList.addAll(workoutList);
             DataBaseSingleton.getInstance().setWorkouts(workoutArrayList);
-
-
         }
     }
 
     /**
      * Haetaan viimeisin workout -listalta
      * Asetetaan viimeisin workout nakyviin RecyclerView:n avulla.
-     * MoveAdapter
      */
 
     private void setLastWorkout(){

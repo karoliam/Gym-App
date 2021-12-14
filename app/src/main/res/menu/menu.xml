@@ -10,6 +10,6 @@
         android:icon="@drawable/ic_baseline_person_24" />
     <item
         android:id="@+id/statistics"
-        android:title="Statistics"
-        android:icon="@drawable/ic_baseline_bar_chart_24" />
+        android:title="Recent"
+        android:icon="@drawable/ic_baseline_history_24" />
 </menu>

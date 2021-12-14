@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 /**
  * Workout-luokka tekee ArrayListeja Move-elementeistä
- * @author Laura
+ * @author Laura Immonen
  * @version 0.1
  */
 public class Workout {

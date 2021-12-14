@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Project">
         <activity
             android:name=".OwnStatistics"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".TemplateStatistics"
             android:exported="false"
