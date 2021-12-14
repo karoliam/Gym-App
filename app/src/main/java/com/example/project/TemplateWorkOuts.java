@@ -106,82 +106,82 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
 
 
-            weight1 = findViewById(R.id.weightEditText);
-            weight2 = findViewById(R.id.weightEditText2);
-            weight3 = findViewById(R.id.weightEditText3);
-            weight4 = findViewById(R.id.weightEditText4);
-            set1 = findViewById(R.id.setsEditText);
-            set2 = findViewById(R.id.setsEditText2);
-            set3 = findViewById(R.id.setsEditText3);
-            set4 = findViewById(R.id.setsEditText4);
-            rep1 = findViewById(R.id.repsEditText);
-            rep2 = findViewById(R.id.repsEditText2);
-            rep3 = findViewById(R.id.repsEditText3);
-            rep4 = findViewById(R.id.repsEditText4);
+        weight1 = findViewById(R.id.weightEditText);
+        weight2 = findViewById(R.id.weightEditText2);
+        weight3 = findViewById(R.id.weightEditText3);
+        weight4 = findViewById(R.id.weightEditText4);
+        set1 = findViewById(R.id.setsEditText);
+        set2 = findViewById(R.id.setsEditText2);
+        set3 = findViewById(R.id.setsEditText3);
+        set4 = findViewById(R.id.setsEditText4);
+        rep1 = findViewById(R.id.repsEditText);
+        rep2 = findViewById(R.id.repsEditText2);
+        rep3 = findViewById(R.id.repsEditText3);
+        rep4 = findViewById(R.id.repsEditText4);
 
-            if (weight1.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight1.getText())) < 0) {
+        if (weight1.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight1.getText())) < 0) {
 
             weight1.setError( "Not valid weight!" );
         }
-        else if (weight2.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight2.getText())) < 0) {
+        if (weight2.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight2.getText())) < 0) {
 
             weight2.setError( "Not valid weight!" );
         }
-        else if (weight3.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight3.getText())) < 0) {
+        if (weight3.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight3.getText())) < 0) {
 
             weight3.setError( "Not valid weight!" );
         }
-        else if (weight4.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight4.getText())) < 0) {
+        if (weight4.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight4.getText())) < 0) {
 
             weight4.setError( "Not valid weight!" );
         }
-        else if (rep1.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep1.getText())) < 0) {
+        if (rep1.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep1.getText())) < 0) {
 
             rep1.setError( "Not valid rep!" );
         }
-        else if (rep2.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep2.getText())) < 0) {
+        if (rep2.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep2.getText())) < 0) {
 
             rep2.setError( "Not valid rep!" );
         }
-        else if (rep3.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep3.getText())) < 0) {
+        if (rep3.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep3.getText())) < 0) {
 
             rep3.setError( "Not valid rep!" );
         }
-        else if (rep4.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep4.getText())) < 0) {
+        if (rep4.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(rep4.getText())) < 0) {
 
             rep4.setError( "Not valid rep!" );
         }
-        else if (set1.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set1.getText())) < 0) {
+        if (set1.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set1.getText())) < 0) {
 
             set1.setError( "Not valid set!" );
         }
-        else if (set2.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set2.getText())) < 0) {
+        if (set2.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set2.getText())) < 0) {
 
             set2.setError( "Not valid set!" );
         }
-        else if (set3.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set3.getText())) < 0) {
+        if (set3.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set3.getText())) < 0) {
 
             set3.setError( "Not valid set!" );
         }
-        else if (set4.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set4.getText())) < 0) {
+        if (set4.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(set4.getText())) < 0) {
 
             set4.setError( "Not valid set!" );
         } else {
 
-                templateHashmap.put("weight1", Integer.parseInt(weight1.getText().toString()));
-                templateHashmap.put("weight2", Integer.parseInt(weight2.getText().toString()));
-                templateHashmap.put("weight3", Integer.parseInt(weight3.getText().toString()));
-                templateHashmap.put("weight4", Integer.parseInt(weight4.getText().toString()));
-                templateHashmap.put("set1", Integer.parseInt(set1.getText().toString()));
-                templateHashmap.put("set2", Integer.parseInt(set2.getText().toString()));
-                templateHashmap.put("set3", Integer.parseInt(set3.getText().toString()));
-                templateHashmap.put("set4", Integer.parseInt(set4.getText().toString()));
-                templateHashmap.put("rep1", Integer.parseInt(rep1.getText().toString()));
-                templateHashmap.put("rep2", Integer.parseInt(rep2.getText().toString()));
-                templateHashmap.put("rep3", Integer.parseInt(rep3.getText().toString()));
-                templateHashmap.put("rep4", Integer.parseInt(rep4.getText().toString()));
-                alertDialog();
-            }
+            templateHashmap.put("weight1", Integer.parseInt(weight1.getText().toString()));
+            templateHashmap.put("weight2", Integer.parseInt(weight2.getText().toString()));
+            templateHashmap.put("weight3", Integer.parseInt(weight3.getText().toString()));
+            templateHashmap.put("weight4", Integer.parseInt(weight4.getText().toString()));
+            templateHashmap.put("set1", Integer.parseInt(set1.getText().toString()));
+            templateHashmap.put("set2", Integer.parseInt(set2.getText().toString()));
+            templateHashmap.put("set3", Integer.parseInt(set3.getText().toString()));
+            templateHashmap.put("set4", Integer.parseInt(set4.getText().toString()));
+            templateHashmap.put("rep1", Integer.parseInt(rep1.getText().toString()));
+            templateHashmap.put("rep2", Integer.parseInt(rep2.getText().toString()));
+            templateHashmap.put("rep3", Integer.parseInt(rep3.getText().toString()));
+            templateHashmap.put("rep4", Integer.parseInt(rep4.getText().toString()));
+            alertDialog();
+        }
 
     }
 
