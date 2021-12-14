@@ -23,8 +23,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_workout);
-//ONGELMA: LISTA TYHJENEE KUN POISTUU
-        loadData();
+
         buildRecyclerView();
 
         setInsertButton();
@@ -47,6 +46,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    //Tässä ei tarvita, tarvitaan statseissa
     private void loadData() {
         //ladataan tiedot ja asetetaan workoutit workoutArrayListiin
         SharedPreferences sharedPreferences = getSharedPreferences("moves", MODE_PRIVATE);
@@ -87,12 +87,37 @@ public class OwnWorkoutActivity extends AppCompatActivity {
             EditText weight = findViewById(R.id.setTextWeight);
             EditText reps = findViewById(R.id.setTextReps);
             EditText sets = findViewById(R.id.setTextSets);
-            insertItem(exercise.getText().toString(),weight.getText().toString(),
-                    reps.getText().toString(), sets.getText().toString());
-            exercise.setText("");
-            weight.setText("");
-            reps.setText("");
-            sets.setText("");
+
+            //Virheilmoitus, jos kenttä on tyhjä
+            if( exercise.getText().toString().trim().equals("") )
+            {
+                exercise.setError( "Not valid exercise!" );
+
+            }
+            else if (weight.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight.getText())) < 0) {
+
+                weight.setError( "Not valid weight!" );
+            }
+            else if (sets.getText().toString().trim().equals("")|| Integer.parseInt(String.valueOf(sets.getText())) < 0) {
+
+                sets.setError( "Not valid set!" );
+
+            }
+            else if (reps.getText().toString().trim().equals("")|| Integer.parseInt(String.valueOf(reps.getText())) < 0) {
+
+                reps.setError( "Not valid rep!" );
+
+            }
+            else {
+                insertItem(exercise.getText().toString(),weight.getText().toString(),
+                        reps.getText().toString(), sets.getText().toString());
+                exercise.setText("");
+                weight.setText("");
+                reps.setText("");
+                sets.setText("");
+            }
+
+
 
         });
     }
@@ -112,7 +137,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
         mAdapter.notifyItemInserted(DataBaseSingleton.getInstance().getWorkouts().size());
     }
     private void clearRecyclerView(){
-        mAdapter.clear();
+        mAdapter.notifyDataSetChanged();
     }
 }
 
