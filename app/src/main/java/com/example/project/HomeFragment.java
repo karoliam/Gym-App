@@ -12,14 +12,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
- * Home-luokka, jonka avulla saadaan kotisivu näkyviin
- * https://github.com/gurkanucar/BottomNavigationViewExample/
+ * Home-fragment, jonka avulla saadaan kotisivu näkyviin
+ * Apuna kaytetty: https://github.com/gurkanucar/BottomNavigationViewExample/
  */
 public class HomeFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Yläpalkin nimi
+        getActivity().setTitle("Home");
+
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.home,container,false);
 
         Intent intent = new Intent(getActivity(), StartNewWorkout.class);

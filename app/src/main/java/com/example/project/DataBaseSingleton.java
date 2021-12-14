@@ -3,8 +3,8 @@ package com.example.project;
 import java.util.ArrayList;
 
 /**
- * Singleton-luokka liikkeistä
- * @author Laura
+ * Singleton-luokka liikkeista
+ * @author Laura Immonen
  * @version 0.1
  */
 

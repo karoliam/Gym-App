@@ -2,6 +2,7 @@ package com.example.project;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,14 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 /**
- * Profile-luokka, jonka avulla saadaan profiilisivu näkyviin
+ * Profile-fragment, jonka avulla saadaan profiilisivu näkyviin
  */
 public class ProfileFragment extends Fragment {
     private EditText pituus;
@@ -41,6 +41,9 @@ public class ProfileFragment extends Fragment {
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Yläpalkin nimi
+        getActivity().setTitle("Profile");
+
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.profile,container,false);
         pituus = (EditText) rootView.findViewById(R.id.pituus_view);
         paino = (EditText) rootView.findViewById(R.id.paino_view);
@@ -54,6 +57,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 saveData();
+                alertDialog();
             }
         });
 
@@ -83,6 +87,21 @@ public class ProfileFragment extends Fragment {
         pituus.setText(pituus2);
         paino.setText(paino2);
         nimi.setText(nimi2);
+
+    }
+    private void alertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.dialog_title);
+        builder.setPositiveButton(getActivity().getString(R.string.ok_button), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+
+    });
+        AlertDialog dialog = builder.create();
+        dialog.setTitle("Profile is saved!");
+        dialog.show();
 
     }
 

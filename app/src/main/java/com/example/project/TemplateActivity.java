@@ -14,6 +14,8 @@ import android.content.Intent;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.Objects;
+
 public class TemplateActivity extends AppCompatActivity {
 public final static String EXTRA = "com.example.templateworkout";
 
@@ -21,6 +23,8 @@ public final static String EXTRA = "com.example.templateworkout";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template);
+        //Yläpalkin nimi
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Templates");
 
         ListView templates = findViewById(R.id.workOutTemplates);
 

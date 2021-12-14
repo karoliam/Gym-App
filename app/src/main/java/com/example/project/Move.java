@@ -5,6 +5,7 @@ package com.example.project;
  * @author Laura, Karoliina, Elias
  * @version 0.1
  */
+
 public class Move {
     private final String moveName;
     private final String gymWeight;
@@ -15,9 +16,10 @@ public class Move {
      *
      * @param moveName String liikkeen nimi
      * @param gymWeight String painojen paino
-     * @param reps String toistojen määrä
-     * @param sets String sarjojen määrä
+     * @param reps String toistojen maara
+     * @param sets String sarjojen maara
      */
+
     public Move(String moveName, String gymWeight, String reps, String sets) {
         this.moveName = moveName;
         this.gymWeight = gymWeight;
@@ -45,7 +47,7 @@ public class Move {
 
     /**
      *
-     * @return palauttaa toistojen määrän
+     * @return palauttaa toistojen maaran
      */
 
     public String getReps() {
@@ -54,7 +56,7 @@ public class Move {
 
     /**
      *
-     * @return palauttaa sarjojen määrän
+     * @return palauttaa sarjojen maaran
      */
 
     public String getSets() {

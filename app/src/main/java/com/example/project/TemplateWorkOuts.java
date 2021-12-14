@@ -22,6 +22,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class TemplateWorkOuts extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template_work_outs);
+
 
         loadData();
         //Etsitään Save-button
@@ -66,6 +68,8 @@ public class TemplateWorkOuts extends AppCompatActivity {
         exerciseThreeTV.setText(TemplateSingleton.getInstance().getTemplate(i).getExercise3());
         exerciseFourTV.setText(TemplateSingleton.getInstance().getTemplate(i).getExercise4());
 
+        //Yläpalkin nimi
+        Objects.requireNonNull(getSupportActionBar()).setTitle(nameTV.getText());
     }
     /*Metodi, joka luo alert dialog ikkunan, kun painetaan save-nappia. Ikkuna ilmoittaa
       tietojen tallentuneen.*/

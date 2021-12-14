@@ -20,7 +20,6 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
     private final ArrayList<Move> moveArrayList;
 
     public static class MoveViewHolder extends RecyclerView.ViewHolder {
-
         public TextView mExerciseTextview, mWeightTextview, mSetsTextview, mRepsTextview;
 
         /**
@@ -39,7 +38,7 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
 
     /**
      *
-     * @param moveArrayList Move-luokan lista
+     * @param moveArrayList Arraylista move-elementeista
      */
 
     public MoveAdapter(ArrayList<Move> moveArrayList) {
@@ -86,13 +85,4 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
         return moveArrayList.size();
     }
 
-    /**
-     * metodi tyhjentaa Move listan
-     */
-
-    public void clear() {
-        int size = moveArrayList.size();
-        moveArrayList.clear();
-        notifyItemRangeRemoved(0, size);
-    }
 }
