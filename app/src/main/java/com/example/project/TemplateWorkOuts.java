@@ -1,12 +1,17 @@
 package com.example.project;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
@@ -16,7 +21,6 @@ public class TemplateWorkOuts extends AppCompatActivity {
     public HashMap<String, Integer> templateHashmap;
     private TextView exerciseOneTV, exerciseTwoTV, exerciseThreeTV, exerciseFourTV, nameTV;
     private EditText weight1,weight2,weight3,weight4, set1, set2, set3, set4, rep1, rep2, rep3, rep4;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +32,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                alertDialog();
                 saveData();
             }
         });
@@ -50,6 +55,22 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
     }
 
+    private void alertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.dialog_message)
+                .setTitle(R.string.dialog_title);
+        AlertDialog dialog = builder.create();
+        builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                finish();
+                Toast.makeText(getApplicationContext(),"Workout saved!",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.setTitle("Saved!");
+        dialog.show();
+
+    }
 
     //Etsitään EditText kentät id:n avulla ja lisätään käyttäjän syöttämät arvot Hashmapiin
     private void saveData() {
