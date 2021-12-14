@@ -14,7 +14,8 @@
             android:exported="false" />
         <activity
             android:name=".TemplateStatistics"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".OwnWorkoutActivity"
             android:exported="false"
