@@ -23,7 +23,11 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
 
         public TextView mExerciseTextview, mWeightTextview, mSetsTextview, mRepsTextview;
 
-        //Asetetaan näkymät
+        /**
+         *
+         * @param moveView asettaa nakymat
+         */
+
         public MoveViewHolder(View moveView) {
             super(moveView);
             mExerciseTextview = moveView.findViewById(R.id.exerciseTextview);
@@ -33,12 +37,22 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
         }
     }
 
-    //Move-luokan lista
+    /**
+     *
+     * @param moveArrayList Move-luokan lista
+     */
+
     public MoveAdapter(ArrayList<Move> moveArrayList) {
         this.moveArrayList = moveArrayList;
     }
 
-    //Liikkeet näytetään määritetyn layotin näköisenä
+    /**
+     *
+     * @param parent ViewGroup-olio
+     * @param viewType int
+     * @return palauttaa nakyman maaritetyn layoutin nakoisena
+     */
+
     @NonNull
     @Override
     public MoveViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -46,7 +60,13 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
         return new MoveViewHolder(v);
     }
 
-    //Syötetty teksti asetetaan näkymään
+    /**
+     *
+     * @param moveHolder MoveViewHolder-olio jarjestaa syotetyt tiedot oikeisiin paikkoihin
+     * @param i int hakee oikean liikkeen
+     * Syotetty teksti asetetaan nakymaan
+     */
+
     @Override
     public void onBindViewHolder(MoveViewHolder moveHolder, int i) {
         Move currentMove = moveArrayList.get(i);
@@ -55,13 +75,21 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
         moveHolder.mRepsTextview.setText(currentMove.getReps());
         moveHolder.mSetsTextview.setText(currentMove.getSets());
     }
-    //Liikelistan pituus
+
+    /**
+     *
+     * @return metodi palauttaa liikelistan pituuden
+     */
+
     @Override
     public int getItemCount() {
         return moveArrayList.size();
     }
 
-    //Tyhjentää Move listan
+    /**
+     * metodi tyhjentaa Move listan
+     */
+
     public void clear() {
         int size = moveArrayList.size();
         moveArrayList.clear();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Singleton-luokka liikkeistä
- * @author Laura, Karoliina, Elias
+ * @author Laura
  * @version 0.1
  */
 
