@@ -27,7 +27,7 @@ public final static String EXTRA = "com.example.templateworkout";
         Objects.requireNonNull(getSupportActionBar()).setTitle("Templates");
 
         ListView templates = findViewById(R.id.workOutTemplates);
-
+        //Listview
         templates.setAdapter(new ArrayAdapter<TemplateModels>(
                 this,
                 android.R.layout.simple_list_item_1,

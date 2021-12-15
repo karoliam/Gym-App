@@ -41,14 +41,12 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
 
         loadData();
-        //Etsitään Save-button
         Button saveButton = findViewById(R.id.saveButton);
-        //Kun Save-buttonia painetaan toteutuu saveData ja alertDialog metodit
+        //Kun Save-buttonia painetaan toteutuu saveData-metodi
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveData();
-
             }
         });
 
@@ -120,6 +118,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
         rep3 = findViewById(R.id.repsEditText3);
         rep4 = findViewById(R.id.repsEditText4);
 
+        //input validointi, käyttäjä ei voi jättää tyhjää kenttää tai syöttää negatiivisia lukuja
         if (weight1.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight1.getText())) < 0) {
 
             weight1.setError( "Not valid weight!" );
@@ -168,7 +167,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
 
             set4.setError( "Not valid set!" );
         } else {
-
+            //lisätään käyttäjän syöttämät arvot hashmapiin
             templateHashmap.put("weight1", Integer.parseInt(weight1.getText().toString()));
             templateHashmap.put("weight2", Integer.parseInt(weight2.getText().toString()));
             templateHashmap.put("weight3", Integer.parseInt(weight3.getText().toString()));
@@ -206,7 +205,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
     /**
      * loadData metodi hakee datan shared preferenceista
      */
-    //Datan deserialisointi, eli muutetaan json takaisin gsoniksi
+    //Datan deserialisointi, eli muutetaan json takaisin
     private void loadData() {
         //Weights
         SharedPreferences prefs = getSharedPreferences("workouts", MODE_PRIVATE);
