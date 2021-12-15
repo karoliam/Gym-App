@@ -91,16 +91,16 @@ public class OwnWorkoutActivity extends AppCompatActivity {
                 exercise.setError( "Not valid exercise!" );
 
             }
-            else if (weight.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight.getText())) < 0) {
+            if (weight.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(weight.getText())) < 0) {
 
                 weight.setError( "Not valid weight!" );
             }
-            else if (sets.getText().toString().trim().equals("")|| Integer.parseInt(String.valueOf(sets.getText())) < 0) {
+            if (sets.getText().toString().trim().equals("")|| Integer.parseInt(String.valueOf(sets.getText())) < 0) {
 
                 sets.setError( "Not valid set!" );
 
             }
-            else if (reps.getText().toString().trim().equals("")|| Integer.parseInt(String.valueOf(reps.getText())) < 0) {
+            if (reps.getText().toString().trim().equals("")|| Integer.parseInt(String.valueOf(reps.getText())) < 0) {
 
                 reps.setError( "Not valid rep!" );
 
