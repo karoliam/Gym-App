@@ -59,7 +59,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 saveData();
-                alertDialog();
+
             }
         });
 
@@ -74,11 +74,29 @@ public class ProfileFragment extends Fragment {
     public void saveData(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(PITUUS, pituus.getText().toString());
-        editor.putString(PAINO, paino.getText().toString());
-        editor.putString(NIMI,nimi.getText().toString());
 
-        editor.apply();
+        if(nimi.getText().toString().trim().equals("")){
+
+            nimi.setError(" Not valid name! ");
+        }
+        else if( pituus.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(pituus.getText())) < 0)
+        {
+            pituus.setError( "Not valid height!" );
+
+        }
+        else if( paino.getText().toString().trim().equals("") || Integer.parseInt(String.valueOf(paino.getText())) < 0)
+        {
+            paino.setError( "Not valid weight!" );
+
+        } else {
+
+            editor.putString(PITUUS, pituus.getText().toString());
+            editor.putString(PAINO, paino.getText().toString());
+            editor.putString(NIMI, nimi.getText().toString());
+
+            editor.apply();
+            alertDialog();
+        }
     }
 
 
