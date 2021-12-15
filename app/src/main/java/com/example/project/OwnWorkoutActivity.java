@@ -143,6 +143,7 @@ public class OwnWorkoutActivity extends AppCompatActivity {
      * Ponnahdusikkuna, joka ilmoittaa workoutin tallennuksesta
      * ok-nappia painamalla toteutetaan clearRecyclerView-metodia
      */
+    //lähde: https://developer.android.com/guide/topics/ui/dialogs
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message)

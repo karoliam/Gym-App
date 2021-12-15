@@ -79,6 +79,7 @@ public class TemplateWorkOuts extends AppCompatActivity {
     /**
      * Luo alert dialog ikkunan, joka ilmoittaa tietojen tallentuneen.
      */
+    //lähde: https://developer.android.com/guide/topics/ui/dialogs
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message)

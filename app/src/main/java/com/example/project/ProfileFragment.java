@@ -103,6 +103,7 @@ public class ProfileFragment extends Fragment {
     /**
      * Metodi, jonka avulla tulee ponnahdusteksti save
      */
+    //Lähde: https://developer.android.com/guide/topics/ui/dialogs
     private void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.dialog_title);
